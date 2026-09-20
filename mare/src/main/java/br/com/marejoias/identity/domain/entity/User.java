@@ -1,6 +1,6 @@
-package br.com.marejoias.domain.entity;
+package br.com.marejoias.identity.domain.entity;
 
-import br.com.marejoias.domain.enums.Role;
+import br.com.marejoias.identity.domain.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
