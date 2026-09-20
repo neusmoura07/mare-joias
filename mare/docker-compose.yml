@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # 1. Nosso Banco de Dados PostgreSQL
+  postgres:
+    image: postgres:16-alpine
+    container_name: joalheria-postgres
+    environment:
+      POSTGRES_DB: joalheria_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # 2. (Bônus) Interface Gráfica para ver o banco
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: joalheria-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@joalheria.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  # Garante que os dados do banco não sumam se você desligar o PC
+  postgres_data:

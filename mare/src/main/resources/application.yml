@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: joalheria-api
+
+  datasource:
+    # URL do seu Postgres local (ajuste a senha se necessário)
+    url: jdbc:postgresql://localhost:5432/joalheria_db
+    username: postgres
+    password: password # Troque pela senha do seu Postgres local
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    # Mostra as queries no console para facilitar o debug
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    # IMPORTANTE: Desliga a criação automática do Hibernate. O Flyway fará isso.
+    hibernate:
+      ddl-auto: validate 
+
+  flyway:
+    enabled: true
+    # Se a tabela do Flyway não existir, ele cria a base.
+    baseline-on-migrate: true 
+
+server:
+  port: 8080
