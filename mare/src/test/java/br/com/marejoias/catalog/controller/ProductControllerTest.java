@@ -2,6 +2,8 @@ package br.com.marejoias.catalog.controller;
 
 import br.com.marejoias.catalog.domain.entity.Product;
 import br.com.marejoias.catalog.service.ProductService;
+import br.com.marejoias.identity.repository.UserRepository;
+import br.com.marejoias.identity.service.TokenService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(ProductController.class)
 @AutoConfigureMockMvc(addFilters = false) // Desliga o Spring Security momentaneamente para testarmos apenas a rota
 class ProductControllerTest {
+
+    @MockBean
+    private TokenService tokenService;
+
+    @MockBean
+    private UserRepository userRepository;
 
     @Autowired
     private MockMvc mockMvc;

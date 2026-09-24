@@ -2,6 +2,8 @@ package br.com.marejoias.checkout.controller;
 
 import br.com.marejoias.checkout.domain.entity.Order;
 import br.com.marejoias.checkout.service.CheckoutService;
+import br.com.marejoias.identity.repository.UserRepository;
+import br.com.marejoias.identity.service.TokenService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,6 +27,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(CheckoutController.class)
 @AutoConfigureMockMvc(addFilters = false) // Desativa o Spring Security para focar no teste do endpoint
 class CheckoutControllerTest {
+
+    @MockBean
+    private TokenService tokenService;
+
+    @MockBean
+    private UserRepository userRepository;
 
     @Autowired
     private MockMvc mockMvc;
