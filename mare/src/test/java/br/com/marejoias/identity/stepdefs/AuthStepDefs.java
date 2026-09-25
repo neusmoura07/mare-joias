@@ -62,7 +62,7 @@ public class AuthStepDefs {
                     .name("Utilizador Teste")
                     .email(email)
                     .passwordHash(passwordEncoder.encode("123456"))
-                    .cpf("00000000000")
+                    .cpf("55555555555")
                     .role(Role.CUSTOMER)
                     .build();
             
@@ -72,14 +72,12 @@ public class AuthStepDefs {
 
     @Dado("que já existe um utilizador com o email {string} e senha {string} na base de dados")
     public void que_ja_existe_um_utilizador_com_o_email_e_senha_na_base_de_dados(String email, String password) {
-        // Limpa a base caso o utilizador já exista de um teste anterior, garantindo isolamento
-        userRepository.findByEmail(email).ifPresent(userRepository::delete);
         
         User user = User.builder()
                 .name("Login Teste")
                 .email(email)
                 .passwordHash(passwordEncoder.encode(password))
-                .cpf("99999999999")
+                .cpf("44444444444")
                 .role(Role.CUSTOMER)
                 .build();
                 
