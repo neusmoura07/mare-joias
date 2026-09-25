@@ -30,13 +30,12 @@ public class SecurityConfig {
                 
                 // Define que a API não guardará estado (sessão/cookies). Toda requisição é independente.
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                
-                // Mapeamento de rotas (A tabela de regras)
+
                 .authorizeHttpRequests(authorize -> authorize
                         // Rotas públicas (Qualquer pessoa pode acessar sem Token)
                         .requestMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/auth/register").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/v1/catalog/**").permitAll() // Cliente precisa ver os produtos sem estar logado
+                        .requestMatchers(HttpMethod.GET, "/api/v1/catalog/**").permitAll()
                         
                         // Rotas exclusivas de ADMIN
                         .requestMatchers(HttpMethod.POST, "/api/v1/catalog/**").hasRole("ADMIN") 
