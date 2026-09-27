@@ -1,16 +1,16 @@
 package br.com.marejoias.checkout.controller;
 
+import br.com.marejoias.checkout.controller.dto.CheckoutRequestDTO;
 import br.com.marejoias.checkout.domain.entity.Order;
 import br.com.marejoias.checkout.service.CheckoutService;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.security.Principal;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/checkout")
@@ -19,31 +19,18 @@ public class CheckoutController {
 
     private final CheckoutService checkoutService;
 
-    /**
-     * Endpoint responsável por processar o fechamento de um pedido.
-     */
     @PostMapping
-    public ResponseEntity<Order> processCheckout(@RequestBody @Valid CheckoutRequestDto requestDto) {
-        Order novoPedido = checkoutService.processCheckout(
-                requestDto.items(),
-                requestDto.shippingFeeCents(),
-                requestDto.shippingAddress()
-        );
+    public ResponseEntity<?> processCheckout(Principal principal, @RequestBody @Valid CheckoutRequestDTO requestDto) {
+        try {
+            // principal.getName() contém o e-mail do JWT (configurado na autenticação)
+            Order novoPedido = checkoutService.processCheckout(principal.getName(), requestDto);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(novoPedido);
+            return ResponseEntity.status(HttpStatus.CREATED).body(novoPedido);
+
+        } catch (IllegalStateException e) {
+            // Captura o erro de falta de estoque e devolve 422 com a mensagem
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY)
+                    .body(Map.of("message", e.getMessage()));
+        }
     }
-
-    /**
-     * DTO de transferência de dados para a requisição de checkout.
-     */
-    public record CheckoutRequestDto(
-            @NotEmpty(message = "O carrinho não pode estar vazio")
-            List<CheckoutService.ItemRequest> items,
-
-            @NotNull(message = "A taxa de frete é obrigatória")
-            Integer shippingFeeCents,
-
-            @NotEmpty(message = "O endereço de entrega é obrigatório")
-            String shippingAddress
-    ) {}
 }

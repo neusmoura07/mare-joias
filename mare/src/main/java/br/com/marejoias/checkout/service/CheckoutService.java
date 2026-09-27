@@ -1,13 +1,21 @@
 package br.com.marejoias.checkout.service;
 
-import br.com.marejoias.catalog.domain.entity.Product;
-import br.com.marejoias.catalog.repository.ProductRepository;
+import br.com.marejoias.catalog.domain.entity.ProductSize;
+import br.com.marejoias.catalog.repository.ProductSizeRepository;
+import br.com.marejoias.checkout.controller.dto.CheckoutRequestDTO;
 import br.com.marejoias.checkout.domain.entity.Order;
+import br.com.marejoias.checkout.domain.entity.OrderItem;
+import br.com.marejoias.checkout.repository.OrderItemRepository;
 import br.com.marejoias.checkout.repository.OrderRepository;
+import br.com.marejoias.customer.domain.entity.Address;
+import br.com.marejoias.customer.repository.AddressRepository;
+import br.com.marejoias.identity.domain.entity.User;
+import br.com.marejoias.identity.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,44 +23,74 @@ import java.util.List;
 public class CheckoutService {
 
     private final OrderRepository orderRepository;
-    private final ProductRepository productRepository;
+    private final OrderItemRepository orderItemRepository;
+    private final ProductSizeRepository productSizeRepository;
+    private final UserRepository userRepository;
+    private final AddressRepository addressRepository;
 
-    /**
-     * Processa a criação de um pedido validando estoque e calculando o total seguro em centavos.
-     */
     @Transactional
-    public Order processCheckout(List<ItemRequest> itensDoCarrinho, Integer taxaFreteCents, String enderecoEntrega) {
-        
-        int subtotalCents = 0;
+    public Order processCheckout(String userEmail, CheckoutRequestDTO request) {
 
-        // 1. Validação de Estoque e Cálculo de Preços (Snapshot)
-        for (ItemRequest itemDto : itensDoCarrinho) {
-            Product product = productRepository.findById(itemDto.productId())
-                    .orElseThrow(() -> new RuntimeException("Produto não encontrado no catálogo."));
+        // 1. Identificar o cliente logado e o endereço de entrega
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado."));
 
-            if (product.getStockQuantity() < itemDto.quantity()) {
-                throw new RuntimeException("Estoque insuficiente para o produto selecionado: " + product.getName());
+        Address address = addressRepository.findById(request.addressId())
+                .orElseThrow(() -> new RuntimeException("Endereço não encontrado."));
+
+        List<OrderItem> itemsToSave = new ArrayList<>();
+        List<ProductSize> sizesToUpdate = new ArrayList<>();
+        int totalGeralCents = 0;
+
+        // 2. Loop de Validação (NADA é salvo na base de dados ainda)
+        for (var itemDto : request.items()) {
+            ProductSize productSize = productSizeRepository.findById(itemDto.sizeId())
+                    .orElseThrow(() -> new RuntimeException("Tamanho de produto não encontrado."));
+
+            // Validação de Estoque
+            if (productSize.getStockQuantity() < itemDto.quantity()) {
+                throw new IllegalStateException("Estoque insuficiente para o produto " + productSize.getProduct().getName());
             }
 
-            subtotalCents += product.getPriceCents() * itemDto.quantity();
+            // Subtrai o estoque em memória e guarda na lista para salvar depois
+            productSize.setStockQuantity(productSize.getStockQuantity() - itemDto.quantity());
+            sizesToUpdate.add(productSize);
+
+            // Prepara o Snapshot (ainda sem associar ao Order, pois ele não foi salvo)
+            OrderItem orderItem = OrderItem.builder()
+                    .product(productSize.getProduct())
+                    .size(productSize.getSizeName())
+                    .quantity(itemDto.quantity())
+                    .unitPriceCentsSnapshot(productSize.getProduct().getPriceCents())
+                    .productNameSnapshot(productSize.getProduct().getName())
+                    .build();
+
+            itemsToSave.add(orderItem);
+            totalGeralCents += (orderItem.getUnitPriceCentsSnapshot() * orderItem.getQuantity());
         }
 
-        int totalGeralCents = subtotalCents + taxaFreteCents;
+        // 3. Se passou por todas as validações sem lançar exceção, agora SIM salvamos tudo!
 
-        // 2. Criação da Entidade Order (Cabeçalho do Pedido)
+        // 3.1 Salvar os estoques atualizados
+        productSizeRepository.saveAll(sizesToUpdate);
+
+        // 3.2 Criar e salvar o Pedido (Cabeçalho)
         Order order = Order.builder()
-                .status("PENDING_PAYMENT")
+                .user(user)
+                .status("PENDING")
                 .totalAmountCents(totalGeralCents)
-                .shippingFeeCents(taxaFreteCents)
-                .shippingAddress(enderecoEntrega)
+                .shippingFeeCents(0)
+                .shippingAddress(address.getStreet())
                 .build();
 
-        // Salva o pedido para gerar o ID de relacionamento
         Order savedOrder = orderRepository.save(order);
+
+        // 3.3 Associar o Pedido salvo a cada Item e salvar os Itens
+        for (OrderItem item : itemsToSave) {
+            item.setOrder(savedOrder);
+        }
+        orderItemRepository.saveAll(itemsToSave);
 
         return savedOrder;
     }
-
-    // Record auxiliar para receber os dados do item vindo da API/Testes
-    public record ItemRequest(java.util.UUID productId, Integer quantity) {}
 }
