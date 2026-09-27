@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -17,6 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
 
@@ -35,11 +37,12 @@ public class SecurityConfig {
                         // Rotas públicas (Qualquer pessoa pode acessar sem Token)
                         .requestMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/auth/register").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/v1/catalog/**").permitAll()
-                        
-                        // Rotas exclusivas de ADMIN
-                        .requestMatchers(HttpMethod.POST, "/api/v1/catalog/**").hasRole("ADMIN") 
-                        
+                        .requestMatchers(HttpMethod.GET, "/api/v1/products/**").permitAll()
+
+                        // Rotas administrativas de catálogo (criação, edição, inativação e stock)
+                        // são liberadas aqui apenas para exigir autenticação; a restrição fina de
+                        // papel (ADMIN) é feita nos controllers via @PreAuthorize("hasRole('ADMIN')")
+
                         // Qualquer outra rota exige estar autenticado (ex: Checkout, Perfil)
                         .anyRequest().authenticated()
                 )
