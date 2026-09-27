@@ -80,7 +80,7 @@ public class CatalogManagementStepDefs {
         resultActions = mockMvc.perform(get("/api/v1/products").contentType(MediaType.APPLICATION_JSON));
     }
 
-    @Então("o sistema deve retornar os produtos com status HTTP {int} \\(OK\\)")
+    @Então("o sistema deve retornar os produtos com status HTTP {int} OK")
     public void oSistemaDeveRetornarOsProdutosComStatusHTTP(int statusEsperado) throws Exception {
         resultActions.andExpect(status().is(statusEsperado));
     }
@@ -142,12 +142,12 @@ public class CatalogManagementStepDefs {
         assertTrue(!body.contains("Pulseira de Prata"));
     }
 
-    @E("retornar o status HTTP {int} \\(OK\\)")
+    @E("retornar o status HTTP {int} OK")
     public void retornarOStatusHTTP(int statusEsperado) throws Exception {
         resultActions.andExpect(status().is(statusEsperado));
     }
 
-    @Dado("que estou autenticado como um cliente comum \\(CUSTOMER\\)")
+    @Dado("que estou autenticado como um cliente comum CUSTOMER")
     public void queEstouAutenticadoComoUmClienteComumCUSTOMER() {
         String email = "cliente-" + System.currentTimeMillis() + "@marejoias.com";
 
@@ -189,7 +189,7 @@ public class CatalogManagementStepDefs {
         assertTrue(status >= 400, "Esperava uma resposta de recusa (>=400), mas obteve " + status);
     }
 
-    @E("retornar o status HTTP {int} \\(Forbidden\\)")
+    @E("retornar o status HTTP {int} Forbidden")
     public void retornarOStatusHTTPForbidden(int statusEsperado) throws Exception {
         resultActions.andExpect(status().is(statusEsperado));
     }
