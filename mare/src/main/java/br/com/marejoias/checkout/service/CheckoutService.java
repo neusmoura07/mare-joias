@@ -5,6 +5,7 @@ import br.com.marejoias.catalog.repository.ProductSizeRepository;
 import br.com.marejoias.checkout.controller.dto.CheckoutRequestDTO;
 import br.com.marejoias.checkout.domain.entity.Order;
 import br.com.marejoias.checkout.domain.entity.OrderItem;
+import br.com.marejoias.checkout.domain.entity.OrderStatus;
 import br.com.marejoias.checkout.repository.OrderItemRepository;
 import br.com.marejoias.checkout.repository.OrderRepository;
 import br.com.marejoias.customer.domain.entity.Address;
@@ -77,7 +78,7 @@ public class CheckoutService {
         // 3.2 Criar e salvar o Pedido (Cabeçalho)
         Order order = Order.builder()
                 .user(user)
-                .status("PENDING")
+                .status(OrderStatus.PENDING)
                 .totalAmountCents(totalGeralCents)
                 .shippingFeeCents(0)
                 .shippingAddress(address.getStreet())

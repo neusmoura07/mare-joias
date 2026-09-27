@@ -6,6 +6,7 @@ import br.com.marejoias.catalog.repository.ProductSizeRepository;
 import br.com.marejoias.checkout.controller.dto.CheckoutItemDTO;
 import br.com.marejoias.checkout.controller.dto.CheckoutRequestDTO;
 import br.com.marejoias.checkout.domain.entity.Order;
+import br.com.marejoias.checkout.domain.entity.OrderStatus;
 import br.com.marejoias.checkout.repository.OrderItemRepository;
 import br.com.marejoias.checkout.repository.OrderRepository;
 import br.com.marejoias.checkout.service.CheckoutService;
@@ -80,7 +81,7 @@ class CheckoutServiceTest {
         // 4. Verificações (Asserts)
         assertNotNull(result);
         assertEquals(30000, result.getTotalAmountCents()); // Total calculado sem frete
-        assertEquals("PENDING", result.getStatus());
+        assertEquals(OrderStatus.PENDING, result.getStatus());
 
         // Verifica se o estoque foi deduzido e se os repositórios foram chamados
         assertEquals(8, mockProductSize.getStockQuantity());

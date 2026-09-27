@@ -34,7 +34,7 @@ public class DatabaseHooks {
     @Autowired
     private OrderItemRepository orderItemRepository;
 
-    @Before // ou @After, dependendo de como o seu colega configurou
+    @Before // ou @After
     public void cleanDatabase() {
         // 2. Apagar PRIMEIRO as tabelas filhas do Checkout
         orderItemRepository.deleteAll();

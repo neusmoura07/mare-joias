@@ -7,6 +7,7 @@ import br.com.marejoias.catalog.repository.CategoryRepository;
 import br.com.marejoias.catalog.repository.ProductRepository;
 import br.com.marejoias.catalog.repository.ProductSizeRepository;
 import br.com.marejoias.checkout.domain.entity.Order;
+import br.com.marejoias.checkout.domain.entity.OrderStatus;
 import br.com.marejoias.checkout.repository.OrderRepository;
 import br.com.marejoias.customer.domain.entity.Address;
 import br.com.marejoias.customer.domain.entity.Customer;
@@ -158,7 +159,7 @@ public class CheckoutApiStepDefs {
                 .findFirst()
                 .orElseThrow(() -> new AssertionError("Nenhum pedido encontrado para o usuário"));
 
-        assertEquals(statusEsperado, pedido.getStatus());
+        assertEquals(OrderStatus.valueOf(statusEsperado), pedido.getStatus());
     }
 
     @Então("o valor total do pedido deve ser calculado como {int} centavos")

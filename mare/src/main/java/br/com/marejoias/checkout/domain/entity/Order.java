@@ -25,8 +25,9 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 50)
-    private String status; // Futuramente podemos trocar por um Enum (PENDING_PAYMENT, PAID, SHIPPED)
+    private OrderStatus status;
 
     @Column(name = "total_amount_cents", nullable = false)
     private Integer totalAmountCents;
