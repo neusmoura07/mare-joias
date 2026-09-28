@@ -14,8 +14,10 @@ import br.com.marejoias.catalog.exception.DuplicateSlugException;
 import br.com.marejoias.catalog.repository.CategoryRepository;
 import br.com.marejoias.catalog.repository.ProductRepository;
 import br.com.marejoias.catalog.repository.ProductSizeRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.UUID;
@@ -28,6 +30,8 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
     private final ProductSizeRepository productSizeRepository;
+
+    private final ImageStorageService imageStorageService;
 
     /**
      * Busca os produtos para a vitrine principal.
@@ -145,5 +149,16 @@ public class ProductService {
 
         size.setStockQuantity(dto.stockQuantity());
         productSizeRepository.save(size);
+    }
+
+    @Transactional
+    public void uploadProductImage(UUID productId, MultipartFile file) {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new IllegalArgumentException("Produto não encontrado para atualização de imagem"));
+
+        String imageUrl = imageStorageService.uploadImage(file);
+
+        product.setImageUrl(imageUrl);
+        productRepository.save(product);
     }
 }
