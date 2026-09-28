@@ -14,8 +14,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile; // <-- Import necessário
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -87,5 +89,21 @@ public class ProductController {
             @RequestBody @Valid StockUpdateDTO dto) {
         productService.updateSizeStock(productId, sizeId, dto);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/{productId}/image")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> uploadImage(
+            @PathVariable UUID productId,
+            @RequestParam("file") MultipartFile file) {
+
+        try {
+            productService.uploadProductImage(productId, file);
+            return ResponseEntity.ok().build();
+        } catch (IllegalArgumentException e) {
+            // Se o produto não existir, retorna 404
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("message", e.getMessage()));
+        }
     }
 }
