@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.List;
 import java.util.UUID;
 
+import static br.com.marejoias.checkout.domain.entity.OrderStatus.PENDING;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
@@ -52,7 +53,7 @@ class CheckoutControllerTest {
         // Mock da resposta do pedido salvo
         Order pedidoMock = Order.builder()
                 .id(orderId)
-                .status("PENDING")
+                .status(PENDING)
                 .totalAmountCents(32500)
                 .shippingFeeCents(0)
                 .shippingAddress("Rua das Joias, 100")
