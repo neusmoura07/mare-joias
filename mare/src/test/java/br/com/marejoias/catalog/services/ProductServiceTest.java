@@ -13,6 +13,7 @@ import br.com.marejoias.catalog.exception.DuplicateSlugException;
 import br.com.marejoias.catalog.repository.CategoryRepository;
 import br.com.marejoias.catalog.repository.ProductRepository;
 import br.com.marejoias.catalog.repository.ProductSizeRepository;
+import br.com.marejoias.catalog.service.ImageStorageService;
 import br.com.marejoias.catalog.service.ProductService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,6 +21,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,6 +32,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -41,37 +47,55 @@ class ProductServiceTest {
     @Mock
     private ProductSizeRepository productSizeRepository;
 
+    @Mock
+    private ImageStorageService imageStorageService; // Adicionado mock para o novo serviço
+
     @InjectMocks
     private ProductService productService;
 
     @Test
-    @DisplayName("Deve retornar apenas produtos ativos para a vitrine principal")
-    void shouldReturnOnlyActiveProducts() {
-        Product anelAtivo = Product.builder().name("Anel de Prata").isActive(true).build();
-        when(productRepository.findByIsActiveTrue()).thenReturn(List.of(anelAtivo));
+    @DisplayName("Deve retornar uma página de produtos filtrados por nome e categoria")
+    void shouldReturnPagedProductsWithFilters() {
+        // Arrange
+        String name = "Anel";
+        String categorySlug = "aneis";
+        Pageable pageable = PageRequest.of(0, 10);
 
-        List<Product> result = productService.getActiveProducts();
+        Product anel = Product.builder().name("Anel Solitário").isActive(true).build();
+        Page<Product> pageMock = new PageImpl<>(List.of(anel));
 
+        // Mockando o comportamento do repositório
+        when(productRepository.findActiveProductsWithFilters(name, categorySlug, pageable))
+                .thenReturn(pageMock);
+
+        // Act
+        Page<Product> result = productService.getProducts(name, categorySlug, pageable);
+
+        // Assert
         assertNotNull(result);
-        assertEquals(1, result.size());
-        assertEquals("Anel de Prata", result.get(0).getName());
-        verify(productRepository, times(1)).findByIsActiveTrue();
+        assertEquals(1, result.getContent().size());
+        assertEquals("Anel Solitário", result.getContent().get(0).getName());
+        verify(productRepository, times(1)).findActiveProductsWithFilters(name, categorySlug, pageable);
     }
 
     @Test
-    @DisplayName("Deve retornar produtos filtrados corretamente pelo slug da categoria")
-    void shouldReturnProductsFilteredByCategorySlug() {
-        String slugDesejado = "aneis";
-        Category categoriaAnel = Category.builder().slug(slugDesejado).build();
-        Product anel = Product.builder().name("Anel Solitário").category(categoriaAnel).isActive(true).build();
+    @DisplayName("Deve ignorar filtros vazios ou nulos ao buscar a página de produtos")
+    void shouldIgnoreEmptyFiltersWhenFetchingProducts() {
+        // Arrange
+        Pageable pageable = PageRequest.of(0, 10);
+        Product anel = Product.builder().name("Anel Solitário").isActive(true).build();
+        Page<Product> pageMock = new PageImpl<>(List.of(anel));
 
-        when(productRepository.findByIsActiveTrueAndCategorySlug(slugDesejado)).thenReturn(List.of(anel));
+        // Se passarmos espaços em branco ou nulo, o Service deve transformar em nulo pro Repo
+        when(productRepository.findActiveProductsWithFilters(null, null, pageable))
+                .thenReturn(pageMock);
 
-        List<Product> result = productService.getProductsByCategory(slugDesejado);
+        // Act
+        Page<Product> result = productService.getProducts("   ", "", pageable);
 
-        assertFalse(result.isEmpty());
-        assertEquals("Anel Solitário", result.get(0).getName());
-        verify(productRepository, times(1)).findByIsActiveTrueAndCategorySlug(slugDesejado);
+        // Assert
+        assertNotNull(result);
+        verify(productRepository, times(1)).findActiveProductsWithFilters(null, null, pageable);
     }
 
     @Test
