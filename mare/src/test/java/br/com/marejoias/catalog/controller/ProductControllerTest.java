@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
@@ -19,6 +22,8 @@ import java.util.List;
 import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -40,7 +45,7 @@ class ProductControllerTest {
     private ProductService productService;
 
     @Test
-    @DisplayName("Deve retornar Status 200 e lista de produtos ao buscar vitrine geral")
+    @DisplayName("Deve retornar Status 200 e página de produtos ao buscar vitrine geral")
     void shouldReturn200AndProductsForGeneralShowcase() throws Exception {
         Product produtoMock = Product.builder()
                 .id(UUID.randomUUID())
@@ -49,18 +54,21 @@ class ProductControllerTest {
                 .isActive(true)
                 .build();
 
-        when(productService.getActiveProducts()).thenReturn(List.of(produtoMock));
+        Page<Product> pageMock = new PageImpl<>(List.of(produtoMock));
+
+        // Mockando o novo método paginado
+        when(productService.getProducts(isNull(), isNull(), any(Pageable.class))).thenReturn(pageMock);
 
         // Simula uma requisição GET para /api/v1/products
         mockMvc.perform(get("/api/v1/products")
-                .contentType(MediaType.APPLICATION_JSON))
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].name").value("Colar de Prata"))
-                .andExpect(jsonPath("$[0].priceCents").value(25000));
+                .andExpect(jsonPath("$.content[0].name").value("Colar de Prata")) // Adicionado o .content
+                .andExpect(jsonPath("$.content[0].priceCents").value(25000));
     }
 
     @Test
-    @DisplayName("Deve retornar Status 200 e produtos filtrados ao passar categorySlug")
+    @DisplayName("Deve retornar Status 200 e página de produtos filtrados ao passar categorySlug")
     void shouldReturn200AndFilteredProductsWhenCategorySlugIsProvided() throws Exception {
         Product produtoMock = Product.builder()
                 .id(UUID.randomUUID())
@@ -68,14 +76,17 @@ class ProductControllerTest {
                 .isActive(true)
                 .build();
 
-        when(productService.getProductsByCategory("aneis")).thenReturn(List.of(produtoMock));
+        Page<Product> pageMock = new PageImpl<>(List.of(produtoMock));
+
+        // Mockando passando apenas o slug
+        when(productService.getProducts(isNull(), eq("aneis"), any(Pageable.class))).thenReturn(pageMock);
 
         // Simula GET para /api/v1/products?categorySlug=aneis
         mockMvc.perform(get("/api/v1/products")
-                .param("categorySlug", "aneis")
-                .contentType(MediaType.APPLICATION_JSON))
+                        .param("categorySlug", "aneis")
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].name").value("Aliança Ouro 18k"));
+                .andExpect(jsonPath("$.content[0].name").value("Aliança Ouro 18k")); // Adicionado o .content
     }
 
     @Test
@@ -112,8 +123,8 @@ class ProductControllerTest {
                 """.formatted(UUID.randomUUID());
 
         mockMvc.perform(post("/api/v1/products")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(body))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(body))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.name").value("Anel Novo"));
     }
@@ -123,8 +134,8 @@ class ProductControllerTest {
     @WithMockUser(roles = "ADMIN")
     void shouldAllowAdminToUpdateSizeStock() throws Exception {
         mockMvc.perform(patch("/api/v1/products/{productId}/sizes/{sizeId}/stock", UUID.randomUUID(), UUID.randomUUID())
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"stockQuantity\": 10}"))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"stockQuantity\": 10}"))
                 .andExpect(status().isNoContent());
     }
 }

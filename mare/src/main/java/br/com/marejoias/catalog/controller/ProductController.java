@@ -10,13 +10,15 @@ import br.com.marejoias.catalog.domain.entity.Product;
 import br.com.marejoias.catalog.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile; // <-- Import necessário
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -28,23 +30,17 @@ public class ProductController {
     private final ProductService productService;
 
     @GetMapping
-    public ResponseEntity<List<ProductSummaryDTO>> getProducts(
-            @RequestParam(name = "categorySlug", required = false) String categorySlug) {
+    public ResponseEntity<Page<ProductSummaryDTO>> getProducts(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String categorySlug,
+            @PageableDefault(size = 10) Pageable pageable) {
 
-        List<Product> products;
+        // O Service já resolve se os filtros vieram preenchidos ou não
+        Page<Product> productsPage = productService.getProducts(name, categorySlug, pageable);
 
-        // Se o frontend mandar a categoria (ex: ?categorySlug=aneis), filtramos.
-        // Se não mandar nada, devolvemos todos os produtos ativos.
-        if (categorySlug != null && !categorySlug.isBlank()) {
-            products = productService.getProductsByCategory(categorySlug);
-        } else {
-            products = productService.getActiveProducts();
-        }
+        // Convertendo a página de Entidades para a página de DTOs
+        Page<ProductSummaryDTO> response = productsPage.map(ProductSummaryDTO::from);
 
-        // Convertido para DTO para não serializar o proxy lazy do Hibernate (Category)
-        List<ProductSummaryDTO> response = products.stream().map(ProductSummaryDTO::from).toList();
-
-        // Retorna Status 200 (OK) com a lista de produtos em formato JSON
         return ResponseEntity.ok(response);
     }
 

@@ -16,6 +16,8 @@ import br.com.marejoias.catalog.repository.ProductRepository;
 import br.com.marejoias.catalog.repository.ProductSizeRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,7 +28,6 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ProductService {
 
-    // A injeção de dependência via construtor (Lombok gera isso para nós com o @RequiredArgsConstructor)
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
     private final ProductSizeRepository productSizeRepository;
@@ -34,18 +35,14 @@ public class ProductService {
     private final ImageStorageService imageStorageService;
 
     /**
-     * Busca os produtos para a vitrine principal.
-     * Regra de negócio: Só retorna produtos que estejam ativos.
+     * Busca os produtos de forma paginada.
+     * Pode filtrar por nome ou slug da categoria, garantindo que apenas os ativos retornem.
      */
-    public List<Product> getActiveProducts() {
-        return productRepository.findByIsActiveTrue();
-    }
+    public Page<Product> getProducts(String name, String categorySlug, Pageable pageable) {
+        String filterName = (name != null && !name.isBlank()) ? name : null;
+        String filterSlug = (categorySlug != null && !categorySlug.isBlank()) ? categorySlug : null;
 
-    /**
-     * Busca os produtos quando o usuário clica em uma categoria na Sidebar (ex: "aneis").
-     */
-    public List<Product> getProductsByCategory(String categorySlug) {
-        return productRepository.findByIsActiveTrueAndCategorySlug(categorySlug);
+        return productRepository.findActiveProductsWithFilters(filterName, filterSlug, pageable);
     }
 
     /**

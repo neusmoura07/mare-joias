@@ -56,6 +56,12 @@ public class CatalogManagementStepDefs {
         productRepository.deleteAll();
         categoryRepository.deleteAll();
 
+        // CRIAMOS UMA CATEGORIA PARA O JPQL NÃO FILTRAR (INNER JOIN) OS PRODUTOS
+        Category categoria = categoryRepository.save(Category.builder()
+                .name("Geral")
+                .slug("geral-mgmt")
+                .build());
+
         productRepository.save(Product.builder()
                 .name("Anel de Prata")
                 .sku("SKU-ATIVO-1")
@@ -63,6 +69,7 @@ public class CatalogManagementStepDefs {
                 .priceCents(10000)
                 .stockQuantity(10)
                 .isActive(true)
+                .category(categoria) // <-- Associado aqui
                 .build());
 
         productRepository.save(Product.builder()
@@ -72,6 +79,7 @@ public class CatalogManagementStepDefs {
                 .priceCents(5000)
                 .stockQuantity(0)
                 .isActive(false)
+                .category(categoria) // <-- Associado aqui
                 .build());
     }
 
