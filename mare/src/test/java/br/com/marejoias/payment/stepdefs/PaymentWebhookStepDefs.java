@@ -94,7 +94,12 @@ public class PaymentWebhookStepDefs {
 
     @Então("o status do pedido na base de dados deve ser atualizado para {string}")
     public void o_status_do_pedido_na_base_de_dados_deve_ser_atualizado_para(String statusEsperado) {
-        Order pedidoAtualizado = orderRepository.findById(currentOrderId).orElseThrow();
+        // Este step é compartilhado com outras features (ex.: checkout/order_history.feature).
+        // Quando currentOrderId não foi definido por um "Dado" deste próprio arquivo,
+        // cai para o pedido mais recentemente criado.
+        UUID orderId = currentOrderId != null ? currentOrderId : orderRepository.findTopByOrderByCreatedAtDesc().getId();
+
+        Order pedidoAtualizado = orderRepository.findById(orderId).orElseThrow();
         // A comparação agora ocorre entre Enums
         assertEquals(OrderStatus.valueOf(statusEsperado), pedidoAtualizado.getStatus());
     }
