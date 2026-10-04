@@ -18,7 +18,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
+import br.com.marejoias.bdd.HttpResponseContext;
 
 import java.util.Map;
 
@@ -48,7 +48,9 @@ public class CatalogManagementStepDefs {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    private ResultActions resultActions;
+    @Autowired
+    private HttpResponseContext httpResponse;
+
     private String customerToken;
 
     @Dado("que existem produtos cadastrados e ativos no sistema")
@@ -85,17 +87,17 @@ public class CatalogManagementStepDefs {
 
     @Quando("um utilizador aceder à listagem de produtos da montra")
     public void umUtilizadorAcederAListagemDeProdutosDaMontra() throws Exception {
-        resultActions = mockMvc.perform(get("/api/v1/products").contentType(MediaType.APPLICATION_JSON));
+        httpResponse.setResultActions(mockMvc.perform(get("/api/v1/products").contentType(MediaType.APPLICATION_JSON)));
     }
 
     @Então("o sistema deve retornar os produtos com status HTTP {int} OK")
     public void oSistemaDeveRetornarOsProdutosComStatusHTTP(int statusEsperado) throws Exception {
-        resultActions.andExpect(status().is(statusEsperado));
+        httpResponse.getResultActions().andExpect(status().is(statusEsperado));
     }
 
     @E("apenas os produtos com o estado ativo devem ser exibidos")
     public void apenasOsProdutosComOEstadoAtivoDevemSerExibidos() throws Exception {
-        String body = resultActions.andReturn().getResponse().getContentAsString();
+        String body = httpResponse.getResultActions().andReturn().getResponse().getContentAsString();
         assertTrue(body.contains("Anel de Prata"));
         assertTrue(!body.contains("Colar Antigo"));
     }
@@ -138,21 +140,21 @@ public class CatalogManagementStepDefs {
 
     @Quando("um cliente filtrar os produtos utilizando o slug {string}")
     public void umClienteFiltrarOsProdutosUtilizandoOSlug(String slugCategoria) throws Exception {
-        resultActions = mockMvc.perform(get("/api/v1/products")
+        httpResponse.setResultActions(mockMvc.perform(get("/api/v1/products")
                 .param("categorySlug", slugCategoria)
-                .contentType(MediaType.APPLICATION_JSON));
+                .contentType(MediaType.APPLICATION_JSON)));
     }
 
     @Então("o sistema deve retornar apenas os produtos pertencentes a essa categoria")
     public void oSistemaDeveRetornarApenasOsProdutosPertencentesAEssaCategoria() throws Exception {
-        String body = resultActions.andReturn().getResponse().getContentAsString();
+        String body = httpResponse.getResultActions().andReturn().getResponse().getContentAsString();
         assertTrue(body.contains("Anel de Ouro 18k"));
         assertTrue(!body.contains("Pulseira de Prata"));
     }
 
     @E("retornar o status HTTP {int} OK")
     public void retornarOStatusHTTP(int statusEsperado) throws Exception {
-        resultActions.andExpect(status().is(statusEsperado));
+        httpResponse.getResultActions().andExpect(status().is(statusEsperado));
     }
 
     @Dado("que estou autenticado como um cliente comum CUSTOMER")
@@ -185,20 +187,19 @@ public class CatalogManagementStepDefs {
                 "stockQuantity", 5
         );
 
-        resultActions = mockMvc.perform(post("/api/v1/products")
+        httpResponse.setResultActions(mockMvc.perform(post("/api/v1/products")
                 .header("Authorization", "Bearer " + customerToken)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(body)));
+                .content(objectMapper.writeValueAsString(body))));
     }
 
     @Então("o sistema deve recusar a operação")
     public void oSistemaDeveRecusarAOperacao() throws Exception {
-        int status = resultActions.andReturn().getResponse().getStatus();
+        int status = httpResponse.getResultActions().andReturn().getResponse().getStatus();
         assertTrue(status >= 400, "Esperava uma resposta de recusa (>=400), mas obteve " + status);
     }
 
     @E("retornar o status HTTP {int} Forbidden")
     public void retornarOStatusHTTPForbidden(int statusEsperado) throws Exception {
-        resultActions.andExpect(status().is(statusEsperado));
-    }
-}
+        httpResponse.getResultActions().andExpect(status().is(statusEsperado));
+    }}
