@@ -14,6 +14,7 @@ import br.com.marejoias.catalog.exception.DuplicateSlugException;
 import br.com.marejoias.catalog.repository.CategoryRepository;
 import br.com.marejoias.catalog.repository.ProductRepository;
 import br.com.marejoias.catalog.repository.ProductSizeRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -50,7 +51,7 @@ public class ProductService {
      */
     public ProductDetailDTO getProductDetailBySlug(String slug) {
         Product product = productRepository.findBySlug(slug)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         List<ProductSizeDTO> sizes = productSizeRepository.findByProductId(product.getId()).stream()
                 .map(size -> new ProductSizeDTO(size.getId(), size.getSizeName(), size.getStockQuantity()))
@@ -84,7 +85,7 @@ public class ProductService {
         }
 
         Category category = categoryRepository.findById(dto.categoryId())
-                .orElseThrow(() -> new RuntimeException("Categoria não encontrada"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         Product product = Product.builder()
                 .category(category)
@@ -104,10 +105,10 @@ public class ProductService {
 
     public void updateProduct(UUID productId, ProductUpdateDTO dto) {
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         Category category = categoryRepository.findById(dto.categoryId())
-                .orElseThrow(() -> new RuntimeException("Categoria não encontrada"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         product.setCategory(category);
         product.setName(dto.name());
@@ -121,7 +122,7 @@ public class ProductService {
 
     public void deactivateProduct(UUID productId) {
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         product.setIsActive(false);
         productRepository.save(product);
@@ -129,7 +130,7 @@ public class ProductService {
 
     public ProductSize createProductSize(UUID productId, ProductSizeCreateDTO dto) {
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         ProductSize size = ProductSize.builder()
                 .product(product)
@@ -142,7 +143,7 @@ public class ProductService {
 
     public void updateSizeStock(UUID productId, UUID sizeId, StockUpdateDTO dto) {
         ProductSize size = productSizeRepository.findByIdAndProductId(sizeId, productId)
-                .orElseThrow(() -> new RuntimeException("Tamanho de produto não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Tamanho de produto não encontrado"));
 
         size.setStockQuantity(dto.stockQuantity());
         productSizeRepository.save(size);
