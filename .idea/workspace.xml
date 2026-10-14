@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b178971e-8bb0-472f-8b56-377116738b91" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="inserindo-dados-iniciais-22" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;neusmoura07&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/neusmoura07/mare-joias.git&quot;,
+    &quot;accountId&quot;: &quot;c6bb904a-2b00-4a4f-bd43-ae8e4ab21ef9&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0146221753137334" />
+      <entry key="MS500" value="1.9824614188002887" />
+      <entry key="S2" value="3.7382249732140385" />
+      <entry key="S5" value="4.429163551286642" />
+      <entry key="S10" value="4.704624571784535" />
+      <entry key="S30" value="5.988577181792971" />
+      <entry key="S60" value="10.147584260032525" />
+      <entry key="M2" value="16.429279794662392" />
+      <entry key="M5" value="24.02004499395241" />
+      <entry key="M10" value="31.26413316522197" />
+      <entry key="M15" value="37.52893336141612" />
+      <entry key="M30" value="51.55142534544202" />
+      <entry key="H1" value="78.73708261698441" />
+      <entry key="H2" value="126.2279398467614" />
+      <entry key="H4" value="176.6437811895918" />
+      <entry key="D1" value="245.86139999211147" />
+      <entry key="W1" value="261.30373870930924" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="5.6938794035746725E-115" />
+      <entry key="S60" value="9.134462542835523E-58" />
+      <entry key="M2" value="4.070288986734242E-29" />
+      <entry key="M5" value="7.140653845616125E-12" />
+      <entry key="M10" value="4.776154832206315E-6" />
+      <entry key="M15" value="4.666221977026388E-4" />
+      <entry key="M30" value="0.05195700582976772" />
+      <entry key="H1" value="0.5871947718981991" />
+      <entry key="H2" value="2.0135486882366838" />
+      <entry key="H4" value="3.7478436517389104" />
+      <entry key="D1" value="6.306299231136612" />
+      <entry key="W1" value="6.8963725167496355" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.938214026759642" />
+      <entry key="MS500" value="1.8847857351268327" />
+      <entry key="S2" value="3.6635502838036564" />
+      <entry key="S5" value="4.3906937389419065" />
+      <entry key="S10" value="4.683655207076967" />
+      <entry key="S30" value="5.9806819537710085" />
+      <entry key="S60" value="10.142620163136904" />
+      <entry key="M2" value="16.426019535593273" />
+      <entry key="M5" value="24.018328275347997" />
+      <entry key="M10" value="31.263034972963094" />
+      <entry key="M15" value="37.528511422870395" />
+      <entry key="M30" value="51.60264636607163" />
+      <entry key="H1" value="79.32303885695184" />
+      <entry key="H2" value="128.2397256748307" />
+      <entry key="H4" value="180.39003999257702" />
+      <entry key="D1" value="252.16726035908945" />
+      <entry key="W1" value="268.20004274317085" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JZHXByslclOUwxCqVLAMtCNa6r" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.All Features in: checkout.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.All Features in: features.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: authentication.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: catalog_management.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: catalogo.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: checkout.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: checkout_api.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: customer_profile.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: global_exceptions.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: payment_webhook.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: product_image.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: API de Checkout com sucesso, cálculo correto do total e baixa de estoque.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Administrador faz upload de imagem com sucesso.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Atualizar o perfil do cliente com sucesso.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Bloqueio de excesso de endereços.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Cálculo correto do valor total do pedido com frete e itens.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Listagem da vitrine principal apenas com produtos ativos.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CheckoutControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CheckoutServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductImageUploadControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductImageUploadServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.marejoias [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.marejoias [clean,test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.marejoias [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.marejoias [test].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MareApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/mare-joias/mare/src/test/resources/features&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\mare-joias\mare\src\test\resources\features" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\mare-joias\mare\src\test\resources\features" />
+      <recent name="D:\mare-joias\mare\src\test\java" />
+      <recent name="D:\mare-joias\mare\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="br.com.marejoias" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn clean test" />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MareApplication">
+    <configuration name="All Features in: features" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="7" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/mare/src/test/resources/features" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demo" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
+      <option name="SUGGESTED_NAME" value="All Features in: features" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: authentication" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="7" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/mare/src/test/resources/features/identity/authentication.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demo" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
+      <option name="SUGGESTED_NAME" value="Feature: authentication" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: customer_profile" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="7" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/mare/src/test/resources/features/customer/customer_profile.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demo" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
+      <option name="SUGGESTED_NAME" value="Feature: customer_profile" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.marejoias.customer.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.marejoias.customer.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.customer.controller.CustomerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.marejoias.customer.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.marejoias.customer.services" />
+      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.customer.services.CustomerServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="CLOUDINARY_URL" value="cloudinary://219243255337966:dkS9a1sdXFbZa1zCB7t2xTI_V6o@hlfzskav" />
+      </envs>
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.marejoias.MareApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Cucumber Java.Feature: authentication" />
+      <item itemvalue="Cucumber Java.All Features in: features" />
+      <item itemvalue="Cucumber Java.Feature: customer_profile" />
+      <item itemvalue="JUnit.CustomerControllerTest" />
+      <item itemvalue="JUnit.CustomerServiceTest" />
+      <item itemvalue="Spring Boot.MareApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CustomerServiceTest" />
+        <item itemvalue="JUnit.CustomerControllerTest" />
+        <item itemvalue="Cucumber Java.Feature: customer_profile" />
+        <item itemvalue="Cucumber Java.Feature: authentication" />
+        <item itemvalue="Cucumber Java.All Features in: features" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="317f654e-b78e-4a82-b03d-c8f54f2b13c7" name="Changes" comment="" />
+      <created>1789861710179</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789861710179</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/modulo-seguranca-rede-cors-rate-limit-18" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: criacao de pastas entitys e separações" />
+    <MESSAGE value="feat: criacao dos Bdds, testes unitarios do catalog, configuração do Cucumber" />
+    <MESSAGE value="feat: criacao dos Bdds, testes unitarios do checkout" />
+    <MESSAGE value="feat: criacao dos Bdds, controller, repository, DTOs, Services, testes unitarios do customer &#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/1" />
+    <MESSAGE value="fix: correção do .feature&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/6" />
+    <MESSAGE value="feat: motor de transações e fechamento de compra&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/5" />
+    <MESSAGE value="feat: Módulo de Pagamentos (Webhook Mock)&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/9" />
+    <MESSAGE value="feat: funcionalidade de upload de imagens para os produtos do catálogo&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/12" />
+    <MESSAGE value="feat: Integração real com o cloudinary para imagens&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/14" />
+    <MESSAGE value="feat(infra): adicionar tratamento global de exceções&#10;&#10;Implementa o GlobalExceptionHandler via @RestControllerAdvice para capturar exceções da API e padronizar o retorno em JSON. Adiciona tratamento para EntityNotFound (404), erros de validação do formulário/DTOs (400) e regras de negócio (422), garantindo respostas amigáveis para o consumo do frontend. Inclui testes BDD (passando).&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/21" />
+    <MESSAGE value="inserindo dados iniciais&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/22" />
+    <option name="LAST_COMMIT_MESSAGE" value="inserindo dados iniciais&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/22" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
