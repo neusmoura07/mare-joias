@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="317f654e-b78e-4a82-b03d-c8f54f2b13c7" name="Changes" comment="inserindo dados iniciais&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/22">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mare-joias.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/MareApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/CategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/dto/CategoryCreateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/dto/CategoryUpdateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductCreateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductDetailDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductSizeCreateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductSizeDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductSummaryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductUpdateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/controller/dto/StockUpdateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/domain/entity/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/domain/entity/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/domain/entity/ProductSize.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/exception/CatalogExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/exception/DuplicateSkuException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/exception/DuplicateSlugException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/repository/CategoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/repository/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/repository/ProductSizeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/service/CategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/service/CloudinaryStorageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/service/ImageStorageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/catalog/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/controller/CheckoutController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/controller/OrderQueryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/controller/dto/CheckoutItemDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/controller/dto/CheckoutRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/controller/dto/OrderHistoryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/controller/dto/OrderItemHistoryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/controller/dto/OrderStatusUpdateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/domain/entity/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/domain/entity/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/domain/entity/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/domain/entity/ProductSize.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/repository/OrderItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/repository/OrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/service/CheckoutService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/checkout/service/OrderQueryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/controller/dto/AddressCreateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/controller/dto/CustomerUpdateDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/domain/entity/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/domain/entity/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/exception/CustomerExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/exception/DuplicateCpfException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/exception/MaxAddressesReachedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/repository/AddressRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/repository/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/customer/services/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/controller/dto/AuthenticationDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/controller/dto/LoginResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/controller/dto/RegisterDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/domain/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/domain/enums/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/security/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/security/SecurityFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/service/AuthorizationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/identity/service/TokenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/infra/ratelimit/RateLimitConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/infra/ratelimit/RateLimitFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/infra/ratelimit/RateLimitService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/payment/controller/PaymentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/payment/controller/dto/PaymentResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/payment/controller/dto/PaymentWebhookDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/java/br/com/marejoias/payment/service/PaymentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/resources/db/migration/V1__create_initial_tables.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/main/resources/db/migration/V2__create_addresses_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/bdd/CucumberSpringConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/bdd/CucumberTestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/bdd/DatabaseHooks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/bdd/HttpResponseContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/controller/CategoryControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/controller/ProductControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/controller/ProductImageUploadControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/services/CategoryServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/services/ProductImageUploadServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/services/ProductServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/stepdefs/CatalogManagementStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/stepdefs/CatalogStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/stepdefs/ProductImageStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/catalog/stepdefs/ProductPaginationStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/checkout/controller/CheckoutControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/checkout/services/CheckoutServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/checkout/services/OrderQueryServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/checkout/stepdefs/CheckoutApiStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/checkout/stepdefs/OrderHistoryStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/customer/controller/CustomerControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/customer/services/CustomerServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/customer/stepdefs/CustomerStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/identity/controller/AuthControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/identity/service/AuthorizationServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/identity/stepdefs/AuthStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/infra/ratelimit/RateLimitServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/infra/stepdefs/SecurityPoliciesStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/payment/controller/PaymentControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/payment/service/PaymentServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/java/br/com/marejoias/payment/stepdefs/PaymentWebhookStepDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/catalog/catalog_management.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/catalog/catalogo.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/catalog/product_image.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/catalog/product_pagination_filter.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/checkout/checkout_api.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/checkout/order_history.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/customer/customer_profile.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/identity/authentication.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/infra/security_policies.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mare/src/test/resources/features/payment/payment_webhook.feature" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="inserindo-dados-iniciais-22" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;neusmoura07&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/neusmoura07/mare-joias.git&quot;,
+    &quot;accountId&quot;: &quot;c6bb904a-2b00-4a4f-bd43-ae8e4ab21ef9&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0146221753137334" />
+      <entry key="MS500" value="1.9824614188002887" />
+      <entry key="S2" value="3.7382249732140385" />
+      <entry key="S5" value="4.429163551286642" />
+      <entry key="S10" value="4.704624571784535" />
+      <entry key="S30" value="5.988577181792971" />
+      <entry key="S60" value="10.147584260032525" />
+      <entry key="M2" value="16.429279794662392" />
+      <entry key="M5" value="24.02004499395241" />
+      <entry key="M10" value="31.26413316522197" />
+      <entry key="M15" value="37.52893336141612" />
+      <entry key="M30" value="51.55142534544202" />
+      <entry key="H1" value="78.73708261698441" />
+      <entry key="H2" value="126.2279398467614" />
+      <entry key="H4" value="176.6437811895918" />
+      <entry key="D1" value="245.86139999211147" />
+      <entry key="W1" value="261.30373870930924" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="5.6938794035746725E-115" />
+      <entry key="S60" value="9.134462542835523E-58" />
+      <entry key="M2" value="4.070288986734242E-29" />
+      <entry key="M5" value="7.140653845616125E-12" />
+      <entry key="M10" value="4.776154832206315E-6" />
+      <entry key="M15" value="4.666221977026388E-4" />
+      <entry key="M30" value="0.05195700582976772" />
+      <entry key="H1" value="0.5871947718981991" />
+      <entry key="H2" value="2.0135486882366838" />
+      <entry key="H4" value="3.7478436517389104" />
+      <entry key="D1" value="6.306299231136612" />
+      <entry key="W1" value="6.8963725167496355" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.938214026759642" />
+      <entry key="MS500" value="1.8847857351268327" />
+      <entry key="S2" value="3.6635502838036564" />
+      <entry key="S5" value="4.3906937389419065" />
+      <entry key="S10" value="4.683655207076967" />
+      <entry key="S30" value="5.9806819537710085" />
+      <entry key="S60" value="10.142620163136904" />
+      <entry key="M2" value="16.426019535593273" />
+      <entry key="M5" value="24.018328275347997" />
+      <entry key="M10" value="31.263034972963094" />
+      <entry key="M15" value="37.528511422870395" />
+      <entry key="M30" value="51.60264636607163" />
+      <entry key="H1" value="79.32303885695184" />
+      <entry key="H2" value="128.2397256748307" />
+      <entry key="H4" value="180.39003999257702" />
+      <entry key="D1" value="252.16726035908945" />
+      <entry key="W1" value="268.20004274317085" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JZHXByslclOUwxCqVLAMtCNa6r" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.All Features in: checkout.executor": "Run",
+    "Cucumber Java.All Features in: features.executor": "Run",
+    "Cucumber Java.Feature: authentication.executor": "Run",
+    "Cucumber Java.Feature: catalog_management.executor": "Run",
+    "Cucumber Java.Feature: catalogo.executor": "Run",
+    "Cucumber Java.Feature: checkout.executor": "Run",
+    "Cucumber Java.Feature: checkout_api.executor": "Run",
+    "Cucumber Java.Feature: customer_profile.executor": "Run",
+    "Cucumber Java.Feature: global_exceptions.executor": "Run",
+    "Cucumber Java.Feature: payment_webhook.executor": "Run",
+    "Cucumber Java.Feature: product_image.executor": "Run",
+    "Cucumber Java.Scenario: API de Checkout com sucesso, cálculo correto do total e baixa de estoque.executor": "Run",
+    "Cucumber Java.Scenario: Administrador faz upload de imagem com sucesso.executor": "Run",
+    "Cucumber Java.Scenario: Atualizar o perfil do cliente com sucesso.executor": "Run",
+    "Cucumber Java.Scenario: Bloqueio de excesso de endereços.executor": "Run",
+    "Cucumber Java.Scenario: Cálculo correto do valor total do pedido com frete e itens.executor": "Run",
+    "Cucumber Java.Scenario: Listagem da vitrine principal apenas com produtos ativos.executor": "Run",
+    "JUnit.CheckoutControllerTest.executor": "Run",
+    "JUnit.CheckoutServiceTest.executor": "Run",
+    "JUnit.CustomerControllerTest.executor": "Run",
+    "JUnit.CustomerServiceTest.executor": "Run",
+    "JUnit.PaymentControllerTest.executor": "Run",
+    "JUnit.PaymentServiceTest.executor": "Run",
+    "JUnit.ProductControllerTest.executor": "Run",
+    "JUnit.ProductImageUploadControllerTest.executor": "Run",
+    "JUnit.ProductImageUploadServiceTest.executor": "Run",
+    "JUnit.ProductServiceTest.executor": "Run",
+    "Maven.demo [clean,install].executor": "Run",
+    "Maven.demo [clean].executor": "Run",
+    "Maven.marejoias [clean,install].executor": "Run",
+    "Maven.marejoias [clean,test].executor": "Run",
+    "Maven.marejoias [install].executor": "Run",
+    "Maven.marejoias [test].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.MareApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/mare-joias/mare/src/test/resources/features",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\mare-joias\mare\src\test\resources\features" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\mare-joias\mare\src\test\resources\features" />
+      <recent name="D:\mare-joias\mare\src\test\java" />
+      <recent name="D:\mare-joias\mare\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="br.com.marejoias" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn clean test" />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MareApplication">
+    <configuration name="All Features in: features" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="7" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/mare/src/test/resources/features" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demo" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
+      <option name="SUGGESTED_NAME" value="All Features in: features" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: authentication" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="7" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/mare/src/test/resources/features/identity/authentication.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demo" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
+      <option name="SUGGESTED_NAME" value="Feature: authentication" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: customer_profile" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="7" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/mare/src/test/resources/features/customer/customer_profile.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demo" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
+      <option name="SUGGESTED_NAME" value="Feature: customer_profile" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.marejoias.customer.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.marejoias.customer.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.customer.controller.CustomerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.marejoias.customer.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.marejoias.customer.services" />
+      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.customer.services.CustomerServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="CLOUDINARY_URL" value="cloudinary://219243255337966:dkS9a1sdXFbZa1zCB7t2xTI_V6o@hlfzskav" />
+      </envs>
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.marejoias.MareApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Cucumber Java.Feature: authentication" />
+      <item itemvalue="Cucumber Java.All Features in: features" />
+      <item itemvalue="Cucumber Java.Feature: customer_profile" />
+      <item itemvalue="JUnit.CustomerControllerTest" />
+      <item itemvalue="JUnit.CustomerServiceTest" />
+      <item itemvalue="Spring Boot.MareApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CustomerServiceTest" />
+        <item itemvalue="JUnit.CustomerControllerTest" />
+        <item itemvalue="Cucumber Java.Feature: customer_profile" />
+        <item itemvalue="Cucumber Java.Feature: authentication" />
+        <item itemvalue="Cucumber Java.All Features in: features" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="317f654e-b78e-4a82-b03d-c8f54f2b13c7" name="Changes" comment="" />
+      <created>1789861710179</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789861710179</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/modulo-seguranca-rede-cors-rate-limit-18" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: criacao de pastas entitys e separações" />
+    <MESSAGE value="feat: criacao dos Bdds, testes unitarios do catalog, configuração do Cucumber" />
+    <MESSAGE value="feat: criacao dos Bdds, testes unitarios do checkout" />
+    <MESSAGE value="feat: criacao dos Bdds, controller, repository, DTOs, Services, testes unitarios do customer &#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/1" />
+    <MESSAGE value="fix: correção do .feature&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/6" />
+    <MESSAGE value="feat: motor de transações e fechamento de compra&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/5" />
+    <MESSAGE value="feat: Módulo de Pagamentos (Webhook Mock)&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/9" />
+    <MESSAGE value="feat: funcionalidade de upload de imagens para os produtos do catálogo&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/12" />
+    <MESSAGE value="feat: Integração real com o cloudinary para imagens&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/14" />
+    <MESSAGE value="feat(infra): adicionar tratamento global de exceções&#10;&#10;Implementa o GlobalExceptionHandler via @RestControllerAdvice para capturar exceções da API e padronizar o retorno em JSON. Adiciona tratamento para EntityNotFound (404), erros de validação do formulário/DTOs (400) e regras de negócio (422), garantindo respostas amigáveis para o consumo do frontend. Inclui testes BDD (passando).&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/21" />
+    <MESSAGE value="inserindo dados iniciais&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/22" />
+    <option name="LAST_COMMIT_MESSAGE" value="inserindo dados iniciais&#10;&#10;cartão: https://github.com/neusmoura07/mare-joias/issues/22" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
