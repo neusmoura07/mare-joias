@@ -22,6 +22,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(CustomerController.class)
@@ -58,16 +59,23 @@ class CustomerControllerTest {
     }
 
     @Test
-    @DisplayName("Deve retornar 201 Created ao adicionar um novo endereço")
+    @DisplayName("Deve retornar 201 Created e o ID do endereço ao adicionar via token")
     void shouldReturn201WhenAddingAddress() throws Exception {
-        UUID customerId = UUID.randomUUID();
+        String email = "cliente@teste.com";
+        UUID novoAddressId = UUID.randomUUID();
         AddressCreateDTO dto = new AddressCreateDTO("01000-000", "Rua das Flores");
 
-        mockMvc.perform(post("/api/v1/customers/" + customerId + "/addresses")
+        // Simula o service retornando o ID do endereço recém-criado
+        Mockito.when(customerService.addAddressByEmail(eq(email), any(AddressCreateDTO.class)))
+                .thenReturn(novoAddressId);
+
+        mockMvc.perform(post("/api/v1/customers/me/addresses")
+                        .principal(() -> email) // Simula o usuário autenticado (Principal)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(dto)))
-                .andExpect(status().isCreated());
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.addressId").value(novoAddressId.toString())); // Verifica o retorno
 
-        Mockito.verify(customerService, Mockito.times(1)).addAddress(eq(customerId), any(AddressCreateDTO.class));
+        Mockito.verify(customerService, Mockito.times(1)).addAddressByEmail(eq(email), any(AddressCreateDTO.class));
     }
 }

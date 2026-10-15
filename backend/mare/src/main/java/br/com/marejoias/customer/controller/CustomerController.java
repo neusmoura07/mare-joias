@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -23,9 +25,10 @@ public class CustomerController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/{id}/addresses")
-    public ResponseEntity<Void> addAddress(@PathVariable UUID id, @RequestBody AddressCreateDTO dto) {
-        customerService.addAddress(id, dto);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    @PostMapping("/me/addresses")
+    public ResponseEntity<Map<String, UUID>> addAddress(Principal principal, @RequestBody AddressCreateDTO dto) {
+        UUID novoAddressId = customerService.addAddressByEmail(principal.getName(), dto);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("addressId", novoAddressId));
     }
 }

@@ -37,5 +37,5 @@ api:
     requests-per-minute: 100
 
 cloudinary:
-  url: ${CLOUDINARY_URL}
+  url: ${CLOUDINARY_URL:cloudinary://111111111111111:senha-falsa@mare-joias}
 

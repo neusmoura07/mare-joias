@@ -5,6 +5,7 @@ import type { Product } from "@/types/product";
 export interface CartItem {
   product: Product;
   size: string;
+  sizeId: string;
   quantity: number;
 }
 
@@ -13,7 +14,7 @@ interface CartContextValue {
   isOpen: boolean;
   itemCount: number;
   subtotal: number;
-  addItem: (product: Product, size: string, quantity?: number) => void;
+  addItem: (product: Product, size: string, sizeId: string, quantity?: number) => void;
   removeItem: (productId: string, size: string) => void;
   updateQuantity: (productId: string, size: string, quantity: number) => void;
   clearCart: () => void;
@@ -26,11 +27,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const addItem = (product: Product, size: string, quantity = 1) => {
+  const addItem = (product: Product, size: string, sizeId: string, quantity = 1) => {
     setItems((current) => {
-      const match = current.find((item) => item.product.id === product.id && item.size === size);
+      const match = current.find((item) => item.product.id === product.id && item.sizeId === sizeId);
       if (match) return current.map((item) => item === match ? { ...item, quantity: item.quantity + quantity } : item);
-      return [...current, { product, size, quantity }];
+      return [...current, { product, size, sizeId, quantity }];
     });
     setIsOpen(true);
   };

@@ -101,7 +101,8 @@ public class CustomerStepDefs {
     public void o_sistema_tentar_adicionar_um_quarto_endereco_com_cep(String cep) throws Exception {
         String jsonPayload = String.format("{\"zipCode\": \"%s\", \"street\": \"Rua Nova Teste\"}", cep);
 
-        resultActions = mockMvc.perform(post("/api/v1/customers/" + currentCustomerId + "/addresses")
+        // ATUALIZADO: Rota /me/addresses utilizando o e-mail maria@teste.com (simulado no 'user')
+        resultActions = mockMvc.perform(post("/api/v1/customers/me/addresses")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(jsonPayload)
                 .with(user("maria@teste.com").roles("CUSTOMER")));
