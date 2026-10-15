@@ -13,12 +13,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.Optional;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 
 @ExtendWith(MockitoExtension.class)
 class CustomerServiceTest {
@@ -48,27 +50,36 @@ class CustomerServiceTest {
     }
 
     @Test
-    @DisplayName("Deve adicionar um endereço quando o cliente tiver menos de 3")
+    @DisplayName("Deve adicionar um endereço e retornar o UUID quando o cliente tiver menos de 3")
     void shouldAddAddressWhenUnderLimit() {
-        UUID customerId = UUID.randomUUID();
+        String email = "cliente@teste.com";
         Customer mockCustomer = new Customer();
-        // Cliente começa sem endereços
-        
+
         AddressCreateDTO dto = new AddressCreateDTO("01000-000", "Rua Nova");
 
-        Mockito.when(customerRepository.findById(customerId)).thenReturn(Optional.of(mockCustomer));
+        Mockito.when(customerRepository.findByEmail(email)).thenReturn(Optional.of(mockCustomer));
 
-        customerService.addAddress(customerId, dto);
+        Mockito.when(customerRepository.save(any(Customer.class))).thenAnswer(invocation -> {
+            Customer savedCustomer = invocation.getArgument(0);
+            Address addedAddress = savedCustomer.getAddresses().get(0);
+
+            ReflectionTestUtils.setField(addedAddress, "id", UUID.randomUUID());
+
+            return savedCustomer;
+        });
+
+        UUID resultId = customerService.addAddressByEmail(email, dto);
 
         assertEquals(1, mockCustomer.getAddresses().size());
         assertEquals("Rua Nova", mockCustomer.getAddresses().get(0).getStreet());
+        assertNotNull(resultId); // Agora o teste passará, pois o Mockito injetou o ID!
         Mockito.verify(customerRepository, Mockito.times(1)).save(mockCustomer);
     }
 
     @Test
     @DisplayName("Deve lançar exceção ao tentar adicionar o quarto endereço")
     void shouldThrowExceptionWhenMaxAddressesReached() {
-        UUID customerId = UUID.randomUUID();
+        String email = "cliente@teste.com";
         Customer mockCustomer = new Customer();
 
         mockCustomer.addAddress(new Address());
@@ -77,9 +88,9 @@ class CustomerServiceTest {
 
         AddressCreateDTO dto = new AddressCreateDTO("01000-000", "Rua Nova");
 
-        Mockito.when(customerRepository.findById(customerId)).thenReturn(Optional.of(mockCustomer));
+        Mockito.when(customerRepository.findByEmail(email)).thenReturn(Optional.of(mockCustomer));
 
-        assertThrows(MaxAddressesReachedException.class, () -> customerService.addAddress(customerId, dto));
+        assertThrows(MaxAddressesReachedException.class, () -> customerService.addAddressByEmail(email, dto));
 
         Mockito.verify(customerRepository, Mockito.never()).save(any());
     }
