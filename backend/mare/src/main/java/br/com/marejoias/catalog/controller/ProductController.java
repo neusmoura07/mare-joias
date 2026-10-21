@@ -70,6 +70,23 @@ public class ProductController {
         return ResponseEntity.noContent().build();
     }
 
+    @PatchMapping("/{id}/activate")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> activateProduct(@PathVariable UUID id) {
+        productService.activateProduct(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    // Rota exclusiva do Admin para listar TODOS os produtos (ativos e inativos)
+    @GetMapping("/todos")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Page<ProductSummaryDTO>> getAllProductsForAdmin(
+            @PageableDefault(size = 50) Pageable pageable) {
+        // Vai precisar criar este método no seu ProductService
+        Page<Product> productsPage = productService.getAllProductsAdmin(pageable);
+        return ResponseEntity.ok(productsPage.map(ProductSummaryDTO::from));
+    }
+
     @PostMapping("/{productId}/sizes")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> createProductSize(@PathVariable UUID productId, @RequestBody @Valid ProductSizeCreateDTO dto) {
@@ -101,5 +118,11 @@ public class ProductController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(Map.of("message", e.getMessage()));
         }
+    }
+
+    @GetMapping("/id/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<ProductDetailDTO> getProductByIdForAdmin(@PathVariable UUID id) {
+        return ResponseEntity.ok(productService.getProductDetailById(id));
     }
 }

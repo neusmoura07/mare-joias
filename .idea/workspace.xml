@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b178971e-8bb0-472f-8b56-377116738b91" name="Changes" comment="" />
+    <list default="true" id="b178971e-8bb0-472f-8b56-377116738b91" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductDetailDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/services/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/controller/CustomerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/controller/CustomerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/services/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/services/CustomerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/stepdefs/CustomerStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/stepdefs/CustomerStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routeTree.gen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routeTree.gen.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +39,7 @@
         <entry key="$PROJECT_DIR$" value="inserindo-dados-iniciais-22" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -50,23 +66,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0146221753137334" />
-      <entry key="MS500" value="1.9824614188002887" />
-      <entry key="S2" value="3.7382249732140385" />
-      <entry key="S5" value="4.429163551286642" />
-      <entry key="S10" value="4.704624571784535" />
-      <entry key="S30" value="5.988577181792971" />
-      <entry key="S60" value="10.147584260032525" />
-      <entry key="M2" value="16.429279794662392" />
-      <entry key="M5" value="24.02004499395241" />
-      <entry key="M10" value="31.26413316522197" />
-      <entry key="M15" value="37.52893336141612" />
-      <entry key="M30" value="51.55142534544202" />
-      <entry key="H1" value="78.73708261698441" />
-      <entry key="H2" value="126.2279398467614" />
-      <entry key="H4" value="176.6437811895918" />
-      <entry key="D1" value="245.86139999211147" />
-      <entry key="W1" value="261.30373870930924" />
+      <entry key="MS100" value="1.1386961840084806" />
+      <entry key="MS500" value="1.6736167884328452" />
+      <entry key="S2" value="1.905947906234403" />
+      <entry key="S5" value="1.9612609283887612" />
+      <entry key="S10" value="1.9804391507833423" />
+      <entry key="S30" value="1.9934367347173356" />
+      <entry key="S60" value="1.9967129882679717" />
+      <entry key="M2" value="1.9991611790191082" />
+      <entry key="M5" value="2.475500568623137" />
+      <entry key="M10" value="6.545562571495999" />
+      <entry key="M15" value="12.540262349232172" />
+      <entry key="M30" value="29.8156972099872" />
+      <entry key="H1" value="60.36229682026091" />
+      <entry key="H2" value="111.19493486562786" />
+      <entry key="H4" value="167.13254713738203" />
+      <entry key="D1" value="247.39214296961208" />
+      <entry key="W1" value="265.7742009679562" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -74,37 +90,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="5.6938794035746725E-115" />
-      <entry key="S60" value="9.134462542835523E-58" />
-      <entry key="M2" value="4.070288986734242E-29" />
-      <entry key="M5" value="7.140653845616125E-12" />
-      <entry key="M10" value="4.776154832206315E-6" />
-      <entry key="M15" value="4.666221977026388E-4" />
-      <entry key="M30" value="0.05195700582976772" />
-      <entry key="H1" value="0.5871947718981991" />
-      <entry key="H2" value="2.0135486882366838" />
-      <entry key="H4" value="3.7478436517389104" />
-      <entry key="D1" value="6.306299231136612" />
-      <entry key="W1" value="6.8963725167496355" />
+      <entry key="S30" value="1.563583447264632E-132" />
+      <entry key="S60" value="1.5136985644584842E-66" />
+      <entry key="M2" value="1.6569272663067448E-33" />
+      <entry key="M5" value="1.25201421698216E-13" />
+      <entry key="M10" value="6.324322923991153E-7" />
+      <entry key="M15" value="1.2122415200014678E-4" />
+      <entry key="M30" value="0.026482317962756984" />
+      <entry key="H1" value="0.41921626099918996" />
+      <entry key="H2" value="1.7013360538256104" />
+      <entry key="H4" value="3.445049371234012" />
+      <entry key="D1" value="6.2183749445704946" />
+      <entry key="W1" value="6.88255383089832" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.938214026759642" />
-      <entry key="MS500" value="1.8847857351268327" />
-      <entry key="S2" value="3.6635502838036564" />
-      <entry key="S5" value="4.3906937389419065" />
-      <entry key="S10" value="4.683655207076967" />
-      <entry key="S30" value="5.9806819537710085" />
-      <entry key="S60" value="10.142620163136904" />
-      <entry key="M2" value="16.426019535593273" />
-      <entry key="M5" value="24.018328275347997" />
-      <entry key="M10" value="31.263034972963094" />
-      <entry key="M15" value="37.528511422870395" />
-      <entry key="M30" value="51.60264636607163" />
-      <entry key="H1" value="79.32303885695184" />
-      <entry key="H2" value="128.2397256748307" />
-      <entry key="H4" value="180.39003999257702" />
-      <entry key="D1" value="252.16726035908945" />
-      <entry key="W1" value="268.20004274317085" />
+      <entry key="MS100" value="0.13913930859603782" />
+      <entry key="MS500" value="0.8870712170306564" />
+      <entry key="S2" value="1.5856620271877722" />
+      <entry key="S5" value="1.8181616665898415" />
+      <entry key="S10" value="1.9061284821473157" />
+      <entry key="S30" value="1.968026290246234" />
+      <entry key="S60" value="1.9839260126490637" />
+      <entry key="M2" value="1.9927469586877529" />
+      <entry key="M5" value="2.4728948813594602" />
+      <entry key="M10" value="6.544112251911866" />
+      <entry key="M15" value="12.539270621153296" />
+      <entry key="M30" value="29.841351511377724" />
+      <entry key="H1" value="60.780397599396046" />
+      <entry key="H2" value="112.89466423237151" />
+      <entry key="H4" value="170.5760806816056" />
+      <entry key="D1" value="253.61007526658423" />
+      <entry key="W1" value="272.6566850369191" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -140,7 +156,9 @@
     &quot;Cucumber Java.Scenario: Listagem da vitrine principal apenas com produtos ativos.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CheckoutControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CheckoutServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerControllerTest (1).executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CustomerControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerServiceTest (1).executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CustomerServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PaymentControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PaymentServiceTest.executor&quot;: &quot;Run&quot;,
@@ -163,6 +181,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MareApplication (1).executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.MareApplication.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -205,9 +224,9 @@
   <component name="RunManager" selected="Spring Boot.MareApplication">
     <configuration name="All Features in: features" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="7" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/mare/src/test/resources/features" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/backend/mare/src/test/resources/features" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="demo" />
+      <module name="marejoias" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
       <option name="SUGGESTED_NAME" value="All Features in: features" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
@@ -221,44 +240,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: authentication" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="7" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/mare/src/test/resources/features/identity/authentication.feature" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="demo" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
-      <option name="SUGGESTED_NAME" value="Feature: authentication" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Feature: customer_profile" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="7" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/mare/src/test/resources/features/customer/customer_profile.feature" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="demo" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
-      <option name="SUGGESTED_NAME" value="Feature: customer_profile" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CustomerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
+    <configuration name="CustomerControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="marejoias" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="br.com.marejoias.customer.controller.*" />
@@ -267,6 +250,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.marejoias.customer.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.marejoias.customer.controller.CustomerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="marejoias" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.marejoias.customer.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.marejoias.customer.services" />
+      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.customer.services.CustomerServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -287,31 +285,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MareApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="marejoias" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.marejoias.MareApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.marejoias.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="CLOUDINARY_URL" value="cloudinary://219243255337966:dkS9a1sdXFbZa1zCB7t2xTI_V6o@hlfzskav" />
       </envs>
-      <module name="demo" />
+      <module name="marejoias" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.marejoias.MareApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber Java.Feature: authentication" />
       <item itemvalue="Cucumber Java.All Features in: features" />
-      <item itemvalue="Cucumber Java.Feature: customer_profile" />
-      <item itemvalue="JUnit.CustomerControllerTest" />
+      <item itemvalue="JUnit.CustomerControllerTest (1)" />
+      <item itemvalue="JUnit.CustomerServiceTest (1)" />
       <item itemvalue="JUnit.CustomerServiceTest" />
       <item itemvalue="Spring Boot.MareApplication" />
+      <item itemvalue="Spring Boot.MareApplication (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CustomerServiceTest" />
-        <item itemvalue="JUnit.CustomerControllerTest" />
-        <item itemvalue="Cucumber Java.Feature: customer_profile" />
-        <item itemvalue="Cucumber Java.Feature: authentication" />
         <item itemvalue="Cucumber Java.All Features in: features" />
+        <item itemvalue="JUnit.CustomerControllerTest (1)" />
+        <item itemvalue="JUnit.CustomerServiceTest (1)" />
+        <item itemvalue="Spring Boot.MareApplication (1)" />
+        <item itemvalue="JUnit.CustomerServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -328,7 +348,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="317f654e-b78e-4a82-b03d-c8f54f2b13c7" name="Changes" comment="" />
+      <changelist id="b178971e-8bb0-472f-8b56-377116738b91" name="Changes" comment="" />
       <created>1789861710179</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

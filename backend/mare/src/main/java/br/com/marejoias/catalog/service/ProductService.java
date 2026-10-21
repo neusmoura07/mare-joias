@@ -14,6 +14,7 @@ import br.com.marejoias.catalog.exception.DuplicateSlugException;
 import br.com.marejoias.catalog.repository.CategoryRepository;
 import br.com.marejoias.catalog.repository.ProductRepository;
 import br.com.marejoias.catalog.repository.ProductSizeRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -50,7 +51,7 @@ public class ProductService {
      */
     public ProductDetailDTO getProductDetailBySlug(String slug) {
         Product product = productRepository.findBySlug(slug)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         List<ProductSizeDTO> sizes = productSizeRepository.findByProductId(product.getId()).stream()
                 .map(size -> new ProductSizeDTO(size.getId(), size.getSizeName(), size.getStockQuantity()))
@@ -69,6 +70,7 @@ public class ProductService {
                 product.getImageUrl(),
                 product.getStockQuantity(),
                 product.getIsActive(),
+                category != null ? category.getId() : null,
                 category != null ? category.getName() : null,
                 category != null ? category.getSlug() : null,
                 sizes
@@ -104,7 +106,7 @@ public class ProductService {
 
     public void updateProduct(UUID productId, ProductUpdateDTO dto) {
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         Category category = categoryRepository.findById(dto.categoryId())
                 .orElseThrow(() -> new RuntimeException("Categoria não encontrada"));
@@ -121,15 +123,28 @@ public class ProductService {
 
     public void deactivateProduct(UUID productId) {
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         product.setIsActive(false);
         productRepository.save(product);
     }
 
+    public void activateProduct(UUID productId) {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
+
+        product.setIsActive(true);
+        productRepository.save(product);
+    }
+
+    public Page<Product> getAllProductsAdmin(Pageable pageable) {
+        // Usa o findAll padrão do Spring Data JPA que não tem a restrição de isActive = true
+        return productRepository.findAll(pageable);
+    }
+
     public ProductSize createProductSize(UUID productId, ProductSizeCreateDTO dto) {
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
 
         ProductSize size = ProductSize.builder()
                 .product(product)
@@ -137,7 +152,18 @@ public class ProductService {
                 .stockQuantity(dto.stockQuantity())
                 .build();
 
-        return productSizeRepository.save(size);
+        // Guarda o novo tamanho primeiro
+        size = productSizeRepository.save(size);
+
+        // NOVO: Recalcula e atualiza o estoque global do produto
+        int totalStock = productSizeRepository.findByProductId(productId).stream()
+                .mapToInt(ProductSize::getStockQuantity)
+                .sum();
+
+        product.setStockQuantity(totalStock);
+        productRepository.save(product);
+
+        return size;
     }
 
     public void updateSizeStock(UUID productId, UUID sizeId, StockUpdateDTO dto) {
@@ -146,6 +172,14 @@ public class ProductService {
 
         size.setStockQuantity(dto.stockQuantity());
         productSizeRepository.save(size);
+
+        Product product = size.getProduct();
+        int totalStock = productSizeRepository.findByProductId(productId).stream()
+                .mapToInt(ProductSize::getStockQuantity)
+                .sum();
+
+        product.setStockQuantity(totalStock);
+        productRepository.save(product);
     }
 
     @Transactional
@@ -157,5 +191,33 @@ public class ProductService {
 
         product.setImageUrl(imageUrl);
         productRepository.save(product);
+    }
+
+    public ProductDetailDTO getProductDetailById(UUID id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
+
+        List<ProductSizeDTO> sizes = productSizeRepository.findByProductId(product.getId()).stream()
+                .map(size -> new ProductSizeDTO(size.getId(), size.getSizeName(), size.getStockQuantity()))
+                .toList();
+
+        Category category = product.getCategory();
+
+        return new ProductDetailDTO(
+                product.getId(),
+                product.getSku(),
+                product.getName(),
+                product.getSlug(),
+                product.getDescription(),
+                product.getMaterial(),
+                product.getPriceCents(),
+                product.getImageUrl(),
+                product.getStockQuantity(),
+                product.getIsActive(),
+                category != null ? category.getId() : null,
+                category != null ? category.getName() : null,
+                category != null ? category.getSlug() : null,
+                sizes
+        );
     }
 }

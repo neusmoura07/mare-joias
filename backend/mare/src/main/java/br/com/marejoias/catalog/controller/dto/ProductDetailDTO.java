@@ -14,6 +14,7 @@ public record ProductDetailDTO(
         String imageUrl,
         Integer stockQuantity,
         Boolean isActive,
+        UUID categoryId,       // <-- O NOVO CAMPO (com o tipo UUID correto)
         String categoryName,
         String categorySlug,
         List<ProductSizeDTO> sizes

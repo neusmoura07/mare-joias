@@ -10,12 +10,23 @@ import { ProductCard } from "@/components/product-card";
 export const Route = createFileRoute("/produto/$slug")({ 
   loader: async ({ params }) => { 
     try {
-      const [product, relatedPage] = await Promise.all([
-        getProductBySlug(params.slug),
-        getProducts(0, 4)
-      ]);
-      return { product, relatedProducts: relatedPage.content };
+      // 1. Tenta buscar o produto principal. Se falhar, vai direto pro catch e mostra 404.
+      const product = await getProductBySlug(params.slug);
+      
+      // 2. Tenta buscar os produtos sugeridos de forma isolada e segura.
+      let relatedProducts = [];
+      try {
+        const relatedPage = await getProducts(0, 4);
+        // Garante que pega a lista de produtos, quer o backend devolva uma Page ou uma Lista direta
+        relatedProducts = Array.isArray(relatedPage) ? relatedPage : (relatedPage?.content || []);
+      } catch (suggestionError) {
+        console.error("Aviso: Falha ao carregar a vitrine de sugestões.", suggestionError);
+      }
+
+      return { product, relatedProducts };
+      
     } catch (error) {
+      console.error("Erro Crítico: Produto principal não encontrado ou erro de API.", error);
       throw notFound(); 
     }
   }, 
@@ -58,7 +69,7 @@ function ProductPage() {
   }, [size, availableStock]);
 
   const suggestions = relatedProducts
-    .filter((item) => item.id !== product.id)
+    .filter((item: any) => item.id !== product.id)
     .slice(0, 3);
   
   return (
@@ -82,7 +93,7 @@ function ProductPage() {
                 <button className="text-xs underline underline-offset-4">Guia de medidas</button>
               </div>
               <div className="flex flex-wrap gap-2">
-                {product.sizes?.map((sizeObj) => (
+                {product.sizes?.map((sizeObj: any) => (
                   <Button 
                     key={sizeObj.id} 
                     type="button" 
@@ -127,7 +138,7 @@ function ProductPage() {
                 size="lg" 
                 className="flex-1" 
                 disabled={availableStock === 0}
-                onClick={() => addItem(product, size, quantity)}
+                onClick={() => addItem(product, size, selectedSizeObj?.id || "", quantity)}
               >
                 {availableStock === 0 ? "Esgotado" : "Adicionar ao carrinho"}
               </Button>
@@ -154,7 +165,7 @@ function ProductPage() {
             <Link to="/catalogo" className="text-xs font-bold uppercase tracking-widest">Ver coleção</Link>
           </div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            {suggestions.map((item) => (
+            {suggestions.map((item: any) => (
               <ProductCard key={item.id} product={item} />
             ))}
           </div>
