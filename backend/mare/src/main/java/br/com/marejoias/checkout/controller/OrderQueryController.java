@@ -39,4 +39,10 @@ public class OrderQueryController {
         orderQueryService.updateOrderStatus(orderId, dto);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/api/v1/admin/orders")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<List<OrderHistoryDTO>> getAllOrdersAdmin() {
+        return ResponseEntity.ok(orderQueryService.getAllOrdersAdmin());
+    }
 }

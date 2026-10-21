@@ -69,4 +69,10 @@ public class OrderQueryService {
                 item.getQuantity()
         );
     }
+
+    public List<OrderHistoryDTO> getAllOrdersAdmin() {
+        return orderRepository.findAllByOrderByCreatedAtDesc().stream()
+                .map(this::toHistoryDTO)
+                .toList();
+    }
 }

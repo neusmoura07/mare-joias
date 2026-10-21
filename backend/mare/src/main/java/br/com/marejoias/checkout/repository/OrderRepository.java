@@ -17,4 +17,7 @@ public interface OrderRepository extends JpaRepository<Order, UUID> {
     // Último pedido criado (usado em testes de BDD para localizar o pedido
     // criado por um step "Dado" genérico compartilhado entre features)
     Order findTopByOrderByCreatedAtDesc();
+
+    List<Order> findAllByOrderByCreatedAtDesc();
+
 }
