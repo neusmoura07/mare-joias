@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b178971e-8bb0-472f-8b56-377116738b91" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductDetailDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/controller/OrderQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/controller/OrderQueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/service/OrderQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/service/OrderQueryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/repository/CustomerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/services/CustomerService.java" afterDir="false" />
@@ -19,7 +21,7 @@
       <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/controller/CustomerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/controller/CustomerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/services/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/services/CustomerServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/stepdefs/CustomerStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/stepdefs/CustomerStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/routeTree.gen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routeTree.gen.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/admin.vendas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/admin.vendas.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
