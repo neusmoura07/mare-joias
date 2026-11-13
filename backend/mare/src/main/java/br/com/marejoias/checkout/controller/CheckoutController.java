@@ -1,7 +1,7 @@
 package br.com.marejoias.checkout.controller;
 
 import br.com.marejoias.checkout.controller.dto.CheckoutRequestDTO;
-import br.com.marejoias.checkout.domain.entity.Order;
+import br.com.marejoias.checkout.controller.dto.CheckoutResponseDTO;
 import br.com.marejoias.checkout.service.CheckoutService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -22,13 +22,13 @@ public class CheckoutController {
     @PostMapping
     public ResponseEntity<?> processCheckout(Principal principal, @RequestBody @Valid CheckoutRequestDTO requestDto) {
         try {
-            // principal.getName() contém o e-mail do JWT (configurado na autenticação)
-            Order novoPedido = checkoutService.processCheckout(principal.getName(), requestDto);
+            CheckoutResponseDTO response = checkoutService.processCheckout(principal.getName(), requestDto);
 
-            return ResponseEntity.status(HttpStatus.CREATED).body(novoPedido);
+            // Retorna HTTP 201 (Created) com o JSON contendo o ID do pedido e a URL do Mercado Pago
+            return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
         } catch (IllegalStateException e) {
-            // Captura o erro de falta de estoque e devolve 422 com a mensagem
+            // Captura o erro de falta de estoque e devolve 422
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY)
                     .body(Map.of("message", e.getMessage()));
         }

@@ -230,14 +230,33 @@ class ProductServiceTest {
     void shouldUpdateSizeStock() {
         UUID productId = UUID.randomUUID();
         UUID sizeId = UUID.randomUUID();
-        ProductSize tamanho = ProductSize.builder().id(sizeId).sizeName("18").stockQuantity(2).build();
+
+        // 1. Cria o Produto e associa ao Tamanho para evitar o NullPointerException
+        Product produto = new Product();
+        produto.setId(productId);
+        produto.setStockQuantity(0);
+
+        ProductSize tamanho = ProductSize.builder()
+                .id(sizeId)
+                .product(produto) // <-- Produto associado aqui
+                .sizeName("18")
+                .stockQuantity(2)
+                .build();
+
         StockUpdateDTO dto = new StockUpdateDTO(15);
 
+        // 2. Mocks das chamadas
         when(productSizeRepository.findByIdAndProductId(sizeId, productId)).thenReturn(Optional.of(tamanho));
+        // Simula a busca de tamanhos para o recálculo do estoque total
+        when(productSizeRepository.findByProductId(productId)).thenReturn(List.of(tamanho));
 
+        // 3. Execução
         productService.updateSizeStock(productId, sizeId, dto);
 
+        // 4. Validações
         assertEquals(15, tamanho.getStockQuantity());
+        assertEquals(15, produto.getStockQuantity()); // Valida se o recálculo global funcionou
         verify(productSizeRepository, times(1)).save(tamanho);
+        verify(productRepository, times(1)).save(produto); // Valida se o produto foi salvo com o novo total
     }
 }

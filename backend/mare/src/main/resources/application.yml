@@ -3,29 +3,28 @@ spring:
     name: joalheria-api
 
   datasource:
-    # URL do seu Postgres local (ajuste a senha se necessário)
     url: jdbc:postgresql://localhost:5432/joalheria_db
     username: postgres
-    password: password # Troque pela senha do seu Postgres local
+    password: password
     driver-class-name: org.postgresql.Driver
 
   jpa:
-    # Mostra as queries no console para facilitar o debug
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-    # IMPORTANTE: Desliga a criação automática do Hibernate. O Flyway fará isso.
     hibernate:
       ddl-auto: validate
 
   flyway:
     enabled: true
-    # Se a tabela do Flyway não existir, ele cria a base.
     baseline-on-migrate: true
 
 server:
   port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
 
 api:
   security:
@@ -39,3 +38,9 @@ api:
 cloudinary:
   url: ${CLOUDINARY_URL:cloudinary://111111111111111:senha-falsa@mare-joias}
 
+mercadopago:
+  access-token: ${MP_ACCESS_TOKEN:TEST-token-de-desenvolvimento}
+  back-urls:
+    success: https://localhost:3000/checkout/sucesso
+    pending: https://localhost:3000/checkout/pendente
+    failure: https://localhost:3000/checkout/erro

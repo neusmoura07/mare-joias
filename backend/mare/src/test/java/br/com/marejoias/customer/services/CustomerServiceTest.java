@@ -15,6 +15,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -53,27 +54,43 @@ class CustomerServiceTest {
     @DisplayName("Deve adicionar um endereço e retornar o UUID quando o cliente tiver menos de 3")
     void shouldAddAddressWhenUnderLimit() {
         String email = "cliente@teste.com";
+
+        // 1. Criamos o cliente mockado com a lista vazia
         Customer mockCustomer = new Customer();
+        mockCustomer.setEmail(email);
+        mockCustomer.setAddresses(new ArrayList<>());
 
         AddressCreateDTO dto = new AddressCreateDTO("01000-000", "Rua Nova");
 
-        Mockito.when(customerRepository.findByEmail(email)).thenReturn(Optional.of(mockCustomer));
+        // 2. Simulamos a busca
+        org.mockito.Mockito.when(customerRepository.findByEmail(email))
+                .thenReturn(Optional.of(mockCustomer));
 
-        Mockito.when(customerRepository.save(any(Customer.class))).thenAnswer(invocation -> {
-            Customer savedCustomer = invocation.getArgument(0);
-            Address addedAddress = savedCustomer.getAddresses().get(0);
+        // 3. A SOLUÇÃO: Simulamos o saveAndFlush (que é o que o seu serviço realmente usa)
+        org.mockito.Mockito.when(customerRepository.saveAndFlush(org.mockito.ArgumentMatchers.any(Customer.class)))
+                .thenAnswer(invocation -> {
+                    Customer customerSalvo = invocation.getArgument(0);
 
-            ReflectionTestUtils.setField(addedAddress, "id", UUID.randomUUID());
+                    // Injetamos um UUID falso no endereço que acabou de ser adicionado
+                    if (customerSalvo.getAddresses() != null && !customerSalvo.getAddresses().isEmpty()) {
+                        Address ultimoEndereco = customerSalvo.getAddresses().get(customerSalvo.getAddresses().size() - 1);
+                        org.springframework.test.util.ReflectionTestUtils.setField(ultimoEndereco, "id", UUID.randomUUID());
+                    }
 
-            return savedCustomer;
-        });
+                    // Devolvemos o cliente! (Isto impede o NullPointerException no savedCustomer)
+                    return customerSalvo;
+                });
 
+        // 4. Executamos o método
         UUID resultId = customerService.addAddressByEmail(email, dto);
 
-        assertEquals(1, mockCustomer.getAddresses().size());
-        assertEquals("Rua Nova", mockCustomer.getAddresses().get(0).getStreet());
-        assertNotNull(resultId); // Agora o teste passará, pois o Mockito injetou o ID!
-        Mockito.verify(customerRepository, Mockito.times(1)).save(mockCustomer);
+        // 5. Validamos se deu tudo certo
+        org.junit.jupiter.api.Assertions.assertEquals(1, mockCustomer.getAddresses().size());
+        org.junit.jupiter.api.Assertions.assertEquals("Rua Nova", mockCustomer.getAddresses().get(0).getStreet());
+        org.junit.jupiter.api.Assertions.assertNotNull(resultId);
+
+        // 6. Verificamos se o saveAndFlush foi chamado
+        org.mockito.Mockito.verify(customerRepository, org.mockito.Mockito.times(1)).saveAndFlush(mockCustomer);
     }
 
     @Test

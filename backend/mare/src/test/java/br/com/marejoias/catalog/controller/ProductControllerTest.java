@@ -93,8 +93,21 @@ class ProductControllerTest {
     @DisplayName("Deve retornar Status 200 e o detalhe do produto com seus tamanhos")
     void shouldReturn200AndProductDetailWithSizes() throws Exception {
         ProductDetailDTO detalhe = new ProductDetailDTO(
-                UUID.randomUUID(), "SKU-1", "Anel Solitário", "anel-solitario", "desc", "ouro",
-                50000, "img.png", 5, true, "Anéis", "aneis", List.of());
+                UUID.randomUUID(),
+                "SKU-1",
+                "Anel Solitário",
+                "anel-solitario",
+                "desc",
+                "ouro",
+                50000,
+                "img.png",
+                5,
+                true,
+                UUID.randomUUID(),
+                "Anéis",
+                "aneis",
+                List.of()
+        );
 
         when(productService.getProductDetailBySlug("anel-solitario")).thenReturn(detalhe);
 

@@ -5,23 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b178971e-8bb0-472f-8b56-377116738b91" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/controller/dto/CheckoutResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/infra/mercadopago/MercadoPagoSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/payment/service/MercadoPagoPaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_10_2026_18_56_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_10_2026_18_56_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_10_2026_18_56__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_10_2026_18_56__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/controller/dto/ProductDetailDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/catalog/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/controller/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/controller/CheckoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/controller/OrderQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/controller/OrderQueryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/service/CheckoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/service/CheckoutService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/service/OrderQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/checkout/service/OrderQueryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/repository/CustomerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/customer/services/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/identity/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/java/br/com/marejoias/identity/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/bdd/CucumberSpringConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/bdd/CucumberSpringConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/catalog/controller/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/catalog/controller/ProductControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/catalog/services/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/catalog/services/ProductServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/checkout/controller/CheckoutControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/checkout/controller/CheckoutControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/checkout/services/CheckoutServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/checkout/services/CheckoutServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/controller/CustomerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/controller/CustomerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/services/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/services/CustomerServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/stepdefs/CustomerStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mare/src/test/java/br/com/marejoias/customer/stepdefs/CustomerStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/routes/admin.vendas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/admin.vendas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/cart-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/cart-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/checkout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,29 +81,32 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.1386961840084806" />
-      <entry key="MS500" value="1.6736167884328452" />
-      <entry key="S2" value="1.905947906234403" />
-      <entry key="S5" value="1.9612609283887612" />
-      <entry key="S10" value="1.9804391507833423" />
-      <entry key="S30" value="1.9934367347173356" />
-      <entry key="S60" value="1.9967129882679717" />
-      <entry key="M2" value="1.9991611790191082" />
-      <entry key="M5" value="2.475500568623137" />
-      <entry key="M10" value="6.545562571495999" />
-      <entry key="M15" value="12.540262349232172" />
-      <entry key="M30" value="29.8156972099872" />
-      <entry key="H1" value="60.36229682026091" />
-      <entry key="H2" value="111.19493486562786" />
-      <entry key="H4" value="167.13254713738203" />
-      <entry key="D1" value="247.39214296961208" />
-      <entry key="W1" value="265.7742009679562" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000211682026392" />
+      <entry key="S2" value="1.133476261242149" />
+      <entry key="S5" value="1.604368027823246" />
+      <entry key="S10" value="2.073705674952601" />
+      <entry key="S30" value="2.616562426808282" />
+      <entry key="S60" value="2.7968402739651954" />
+      <entry key="M2" value="2.895370868790006" />
+      <entry key="M5" value="2.9574192982513337" />
+      <entry key="M10" value="2.98425997278774" />
+      <entry key="M15" value="3.0335362302883797" />
+      <entry key="M30" value="4.261685782299206" />
+      <entry key="H1" value="14.971205326369388" />
+      <entry key="H2" value="52.36584624728346" />
+      <entry key="H4" value="114.76121896905673" />
+      <entry key="D1" value="236.43576400441586" />
+      <entry key="W1" value="269.09479730196" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -92,37 +114,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="1.563583447264632E-132" />
-      <entry key="S60" value="1.5136985644584842E-66" />
-      <entry key="M2" value="1.6569272663067448E-33" />
-      <entry key="M5" value="1.25201421698216E-13" />
-      <entry key="M10" value="6.324322923991153E-7" />
-      <entry key="M15" value="1.2122415200014678E-4" />
-      <entry key="M30" value="0.026482317962756984" />
-      <entry key="H1" value="0.41921626099918996" />
-      <entry key="H2" value="1.7013360538256104" />
-      <entry key="H4" value="3.445049371234012" />
-      <entry key="D1" value="6.2183749445704946" />
-      <entry key="W1" value="6.88255383089832" />
+      <entry key="S30" value="2.034294524092839E-220" />
+      <entry key="S60" value="1.7265763269235868E-110" />
+      <entry key="M2" value="1.7696062202952914E-55" />
+      <entry key="M5" value="2.0372228422350744E-22" />
+      <entry key="M10" value="2.5511070061992943E-11" />
+      <entry key="M15" value="1.425822882640878E-7" />
+      <entry key="M30" value="9.082265814406427E-4" />
+      <entry key="H1" value="0.07763494086820431" />
+      <entry key="H2" value="0.732149312050768" />
+      <entry key="H4" value="2.2599572645769386" />
+      <entry key="D1" value="5.796435855640498" />
+      <entry key="W1" value="6.8138129413332456" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.13913930859603782" />
-      <entry key="MS500" value="0.8870712170306564" />
-      <entry key="S2" value="1.5856620271877722" />
-      <entry key="S5" value="1.8181616665898415" />
-      <entry key="S10" value="1.9061284821473157" />
-      <entry key="S30" value="1.968026290246234" />
-      <entry key="S60" value="1.9839260126490637" />
-      <entry key="M2" value="1.9927469586877529" />
-      <entry key="M5" value="2.4728948813594602" />
-      <entry key="M10" value="6.544112251911866" />
-      <entry key="M15" value="12.539270621153296" />
-      <entry key="M30" value="29.841351511377724" />
-      <entry key="H1" value="60.780397599396046" />
-      <entry key="H2" value="112.89466423237151" />
-      <entry key="H4" value="170.5760806816056" />
-      <entry key="D1" value="253.61007526658423" />
-      <entry key="W1" value="272.6566850369191" />
+      <entry key="MS100" value="0.23004691265621877" />
+      <entry key="MS500" value="0.7454788110794482" />
+      <entry key="S2" value="1.0456305139353288" />
+      <entry key="S5" value="1.5424956548863376" />
+      <entry key="S10" value="2.029076184048568" />
+      <entry key="S30" value="2.596307368766057" />
+      <entry key="S60" value="2.7858111804901076" />
+      <entry key="M2" value="2.8896092066920938" />
+      <entry key="M5" value="2.9550522668306365" />
+      <entry key="M10" value="2.983061253417299" />
+      <entry key="M15" value="3.0327184180540634" />
+      <entry key="M30" value="4.262099939434832" />
+      <entry key="H1" value="15.048330478445877" />
+      <entry key="H2" value="53.09710723046323" />
+      <entry key="H4" value="117.02006441643931" />
+      <entry key="D1" value="242.23176399779675" />
+      <entry key="W1" value="275.9085377492014" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -137,72 +159,76 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cucumber Java.All Features in: checkout.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.All Features in: features.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: authentication.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: catalog_management.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: catalogo.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: checkout.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: checkout_api.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: customer_profile.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: global_exceptions.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: payment_webhook.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: product_image.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: API de Checkout com sucesso, cálculo correto do total e baixa de estoque.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Administrador faz upload de imagem com sucesso.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Atualizar o perfil do cliente com sucesso.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Bloqueio de excesso de endereços.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Cálculo correto do valor total do pedido com frete e itens.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Listagem da vitrine principal apenas com produtos ativos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CheckoutControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CheckoutServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerControllerTest (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerServiceTest (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PaymentControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PaymentServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductImageUploadControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductImageUploadServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.demo [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.demo [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.marejoias [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.marejoias [clean,test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.marejoias [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.marejoias [test].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.MareApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MareApplication.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/mare-joias/mare/src/test/resources/features&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.All Features in: checkout.executor": "Run",
+    "Cucumber Java.All Features in: features.executor": "Run",
+    "Cucumber Java.Feature: authentication.executor": "Run",
+    "Cucumber Java.Feature: catalog_management.executor": "Run",
+    "Cucumber Java.Feature: catalogo.executor": "Run",
+    "Cucumber Java.Feature: checkout.executor": "Run",
+    "Cucumber Java.Feature: checkout_api.executor": "Run",
+    "Cucumber Java.Feature: checkout_mercadopago.executor": "Run",
+    "Cucumber Java.Feature: customer_profile.executor": "Run",
+    "Cucumber Java.Feature: global_exceptions.executor": "Run",
+    "Cucumber Java.Feature: payment_webhook.executor": "Run",
+    "Cucumber Java.Feature: product_image.executor": "Run",
+    "Cucumber Java.Scenario: API de Checkout com sucesso, cálculo correto do total e baixa de estoque.executor": "Run",
+    "Cucumber Java.Scenario: Administrador faz upload de imagem com sucesso.executor": "Run",
+    "Cucumber Java.Scenario: Atualizar o perfil do cliente com sucesso.executor": "Run",
+    "Cucumber Java.Scenario: Bloqueio de excesso de endereços.executor": "Run",
+    "Cucumber Java.Scenario: Cálculo correto do valor total do pedido com frete e itens.executor": "Run",
+    "Cucumber Java.Scenario: Listagem da vitrine principal apenas com produtos ativos.executor": "Run",
+    "JUnit.CheckoutControllerTest.executor": "Run",
+    "JUnit.CheckoutServiceTest.executor": "Run",
+    "JUnit.CustomerControllerTest (1).executor": "Run",
+    "JUnit.CustomerControllerTest.executor": "Run",
+    "JUnit.CustomerServiceTest (1).executor": "Run",
+    "JUnit.CustomerServiceTest.executor": "Run",
+    "JUnit.CustomerServiceTest.shouldAddAddressWhenUnderLimit.executor": "Run",
+    "JUnit.PaymentControllerTest.executor": "Run",
+    "JUnit.PaymentServiceTest.executor": "Run",
+    "JUnit.ProductControllerTest.executor": "Run",
+    "JUnit.ProductControllerTest.shouldReturn200AndProductDetailWithSizes.executor": "Run",
+    "JUnit.ProductImageUploadControllerTest.executor": "Run",
+    "JUnit.ProductImageUploadServiceTest.executor": "Run",
+    "JUnit.ProductServiceTest.executor": "Run",
+    "Maven.demo [clean,install].executor": "Run",
+    "Maven.demo [clean].executor": "Run",
+    "Maven.marejoias [clean,compile].executor": "Run",
+    "Maven.marejoias [clean,install].executor": "Run",
+    "Maven.marejoias [clean,test].executor": "Run",
+    "Maven.marejoias [install].executor": "Run",
+    "Maven.marejoias [test].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.MareApplication (1).executor": "Run",
+    "Spring Boot.MareApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/mare-joias/mare/src/test/resources/features",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\mare-joias\mare\src\test\resources\features" />
@@ -220,17 +246,18 @@
     <option name="myCommands">
       <command value="mvn clean" />
       <command value="mvn clean test" />
+      <command value="mvn clean compile" />
       <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.MareApplication">
-    <configuration name="All Features in: features" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: checkout_mercadopago" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="7" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/backend/mare/src/test/resources/features" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/backend/mare/src/test/resources/features/checkout/checkout_mercadopago.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="marejoias" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
-      <option name="SUGGESTED_NAME" value="All Features in: features" />
+      <option name="SUGGESTED_NAME" value="Feature: checkout_mercadopago" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -242,22 +269,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckoutControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="marejoias" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.marejoias.customer.controller.*" />
+          <option name="PATTERN" value="br.com.marejoias.checkout.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="br.com.marejoias.customer.controller" />
-      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.customer.controller.CustomerControllerTest" />
+      <option name="PACKAGE_NAME" value="br.com.marejoias.checkout.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.checkout.controller.CheckoutControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckoutServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="marejoias" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.marejoias.checkout.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.marejoias.checkout.services" />
+      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.checkout.services.CheckoutServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceTest.shouldAddAddressWhenUnderLimit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="marejoias" />
       <extension name="coverage">
         <pattern>
@@ -267,22 +309,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.marejoias.customer.services" />
       <option name="MAIN_CLASS_NAME" value="br.com.marejoias.customer.services.CustomerServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="shouldAddAddressWhenUnderLimit" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
+    <configuration name="ProductControllerTest.shouldReturn200AndProductDetailWithSizes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="marejoias" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.marejoias.customer.services.*" />
+          <option name="PATTERN" value="br.com.marejoias.catalog.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="br.com.marejoias.customer.services" />
-      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.customer.services.CustomerServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="br.com.marejoias.catalog.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.marejoias.catalog.controller.ProductControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturn200AndProductDetailWithSizes" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -296,19 +340,6 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
-    <configuration name="MareApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="marejoias" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.marejoias.MareApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.marejoias.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="CLOUDINARY_URL" value="cloudinary://219243255337966:dkS9a1sdXFbZa1zCB7t2xTI_V6o@hlfzskav" />
@@ -320,20 +351,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber Java.All Features in: features" />
-      <item itemvalue="JUnit.CustomerControllerTest (1)" />
-      <item itemvalue="JUnit.CustomerServiceTest (1)" />
-      <item itemvalue="JUnit.CustomerServiceTest" />
+      <item itemvalue="Cucumber Java.Feature: checkout_mercadopago" />
+      <item itemvalue="JUnit.CheckoutControllerTest" />
+      <item itemvalue="JUnit.CheckoutServiceTest" />
+      <item itemvalue="JUnit.CustomerServiceTest.shouldAddAddressWhenUnderLimit" />
+      <item itemvalue="JUnit.ProductControllerTest.shouldReturn200AndProductDetailWithSizes" />
       <item itemvalue="Spring Boot.MareApplication" />
-      <item itemvalue="Spring Boot.MareApplication (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.All Features in: features" />
-        <item itemvalue="JUnit.CustomerControllerTest (1)" />
-        <item itemvalue="JUnit.CustomerServiceTest (1)" />
-        <item itemvalue="Spring Boot.MareApplication (1)" />
-        <item itemvalue="JUnit.CustomerServiceTest" />
+        <item itemvalue="Cucumber Java.Feature: checkout_mercadopago" />
+        <item itemvalue="JUnit.CheckoutServiceTest" />
+        <item itemvalue="JUnit.CheckoutControllerTest" />
+        <item itemvalue="JUnit.CustomerServiceTest.shouldAddAddressWhenUnderLimit" />
+        <item itemvalue="JUnit.ProductControllerTest.shouldReturn200AndProductDetailWithSizes" />
       </list>
     </recent_temporary>
   </component>
@@ -372,7 +403,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/modulo-seguranca-rede-cors-rate-limit-18" />
+                        <option value="feature/checkout-mercadopago" />
                       </list>
                     </value>
                   </entry>
